@@ -10,31 +10,34 @@ stages:
     name: Ubuntu-SelfHostedAgent
     vmImage: 'Ubuntu-20.04'
   dependsOn: []
-- job: ParallelHelloWorld
-  steps:
-  - script: |
-      for i in {1..10}
-      do
-        echo "Hola Mundo"
-      done
+  job:
+  - job: ParallelHelloWorld
     displayName: 'Imprimir Hola Mundo en paralelo'
+    steps:
+    - script: |
+        for i in {1..10}
+        do
+          echo "Hola Mundo"
+        done
 
 - stage: Parallel Jobs2
   pool: 
     name: Ubuntu-SelfHostedAgent
     vmImage: 'Ubuntu-20.04'
   dependsOn: []
-- job: CreateAndPrintFiles
-  steps:
-  - script: |
-      mkdir -p files
-      for i in {1..10}
-      do
-        date_str=$(date +'%Y-%m-%d_%H-%M-%S')
-        echo $date_str > files/file$i.txt
-        cat files/file$i.txt
-      done
+  job:
+  - job: CreateAndPrintFiles
     displayName: 'Crear archivos con fechas y mostrar en consola'
+    steps:
+    - script: |
+        mkdir -p files
+        for i in {1..10}
+        do
+          date_str=$(date +'%Y-%m-%d_%H-%M-%S')
+          echo $date_str > files/file$i.txt
+          cat files/file$i.txt
+        done
+    
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: 'files'
