@@ -1,9 +1,6 @@
 trigger:
 - none
 
-prerequisites:
-- vmImage: 'ubuntu-latest' 
-
 jobs:
 - job: ParallelHelloWorld
   steps:
