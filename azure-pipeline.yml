@@ -1,0 +1,31 @@
+trigger:
+- none
+
+prerequisites:
+- vmImage: 'ubuntu-latest' 
+
+jobs:
+- job: ParallelHelloWorld
+  steps:
+  - script: |
+      for i in {1..10}
+      do
+        echo "Hola Mundo"
+      done
+    displayName: 'Imprimir Hola Mundo en paralelo'
+
+- job: CreateAndPrintFiles
+  steps:
+  - script: |
+      mkdir -p files
+      for i in {1..10}
+      do
+        date_str=$(date +'%Y-%m-%d_%H-%M-%S')
+        echo $date_str > files/file$i.txt
+        cat files/file$i.txt
+      done
+    displayName: 'Crear archivos con fechas y mostrar en consola'
+  - task: PublishPipelineArtifact
+    inputs:
+      targetPath: 'files'
+      artifact: 'created-files'
