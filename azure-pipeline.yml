@@ -10,7 +10,6 @@ stages:
     name: Ubuntu-SelfHostedAgent
     vmImage: 'Ubuntu-20.04'
   dependsOn: []
-jobs:
 - job: ParallelHelloWorld
   steps:
   - script: |
@@ -20,6 +19,11 @@ jobs:
       done
     displayName: 'Imprimir Hola Mundo en paralelo'
 
+- stage: Parallel Jobs2
+  pool: 
+    name: Ubuntu-SelfHostedAgent
+    vmImage: 'Ubuntu-20.04'
+  dependsOn: []
 - job: CreateAndPrintFiles
   steps:
   - script: |
