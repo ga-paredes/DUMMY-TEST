@@ -10,7 +10,7 @@ stages:
     name: Ubuntu-SelfHostedAgent
     vmImage: 'Ubuntu-20.04'
   dependsOn: []
-  job:
+  jobs:
   - job: ParallelHelloWorld
     displayName: 'Imprimir Hola Mundo en paralelo'
     steps:
@@ -25,7 +25,7 @@ stages:
     name: Ubuntu-SelfHostedAgent
     vmImage: 'Ubuntu-20.04'
   dependsOn: []
-  job:
+  jobs:
   - job: CreateAndPrintFiles
     displayName: 'Crear archivos con fechas y mostrar en consola'
     steps:
