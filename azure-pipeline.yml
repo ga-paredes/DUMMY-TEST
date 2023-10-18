@@ -3,36 +3,39 @@ trigger:
 
 
 
-jobs:
-- job: PrintHelloWorld
-  displayName: 'Imprimir Hola Mundo'
-  pool:
-    name:  Ubuntu-SelfHostedAgent
-  steps:
-  - task: Bash@3
-    inputs:
-      targetType: 'inline'
-      script: |
-        for i in {1..10}
-        do
-            echo "Hola Mundo $i"
-        done
-
-- job: CreateAndPrintFiles
-  displayName: 'Crear y Mostrar Archivos'
-  pool:
-    name:  Ubuntu-SelfHostedAgent
-  steps:
-  - task: Bash@3
-    inputs:
-      targetType: 'inline'
-      script: |
-        for i in {1..10}
-        do
-            filename="file_$i_$(date +'%Y%m%d%H%M%S').txt"
-            touch $filename
-            echo "Created $filename"
-        done
+stages:
+- stage: PrintHelloWorld
+  jobs:
+  - job: PrintHelloWorld
+    displayName: 'Imprimir Hola Mundo'
+    pool:
+      name:  Ubuntu-SelfHostedAgent
+    steps:
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+          for i in {1..10}
+          do
+              echo "Hola Mundo $i"
+          done
+- stage:
+  dependsOn: []
+  jobs:
+  - job: CreateAndPrintFiles
+    displayName: 'Crear y Mostrar Archivos'
+    pool:
+      name:  Ubuntu-SelfHostedAgent
+    steps:
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+          for i in {1..10}
+          do
+              filename="file_$i_$(date +'%Y%m%d%H%M%S').txt"
+              touch $filename
+              echo "Created $filename"
+          done
   
-strategy:
-  maxParallel: 2
+
