@@ -1,44 +1,28 @@
 trigger:
-  branches:
-    include:
-      - '*'
+- main
 
+prerequisites:
+- agent: Ubuntu-SelfHostedAgent
 
-stages:
-- stage: Parallel Jobs
-  pool: 
-    name: Ubuntu-SelfHostedAgent
-    vmImage: 'Ubuntu-20.04'
-  dependsOn: []
-  jobs:
-  - job: ParallelHelloWorld
-    displayName: 'Imprimir Hola Mundo en paralelo'
-    steps:
-    - script: |
-        for i in {1..10}
-        do
-          echo "Hola Mundo"
-        done
+jobs:
+- job: PrintHelloWorld
+  steps:
+  - script: |
+      for i in {1..10}
+      do
+          echo "Hola Mundo $i"
+      done
+    displayName: 'Imprimir Hola Mundo'
+    parallel: true
 
-- stage: Parallel Jobs2
-  pool: 
-    name: Ubuntu-SelfHostedAgent
-    vmImage: 'Ubuntu-20.04'
-  dependsOn: []
-  jobs:
-  - job: CreateAndPrintFiles
-    displayName: 'Crear archivos con fechas y mostrar en consola'
-    steps:
-    - script: |
-        mkdir -p files
-        for i in {1..10}
-        do
-          date_str=$(date +'%Y-%m-%d_%H-%M-%S')
-          echo $date_str > files/file$i.txt
-          cat files/file$i.txt
-        done
-    
-  - task: PublishPipelineArtifact@1
-    inputs:
-      targetPath: 'files'
-      artifact: 'created-files'
+- job: CreateAndPrintFiles
+  steps:
+  - script: |
+      for i in {1..10}
+      do
+          filename="file_$i_$(date +'%Y%m%d%H%M%S').txt"
+          touch $filename
+          echo "Created $filename"
+      done
+    displayName: 'Crear y Mostrar Archivos'
+    parallel: true
