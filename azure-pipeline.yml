@@ -20,7 +20,7 @@ stages:
           do
               echo "Hola Mundo $i"
           done
-- stage:
+- stage: CreateAndPrintFiles
   dependsOn: []
   jobs:
   - job: CreateAndPrintFiles
