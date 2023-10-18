@@ -22,7 +22,7 @@ jobs:
         cat files/file$i.txt
       done
     displayName: 'Crear archivos con fechas y mostrar en consola'
-  - task: PublishPipelineArtifact
+  - task: PublishPipelineArtifact@1
     inputs:
       targetPath: 'files'
       artifact: 'created-files'
