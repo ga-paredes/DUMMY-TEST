@@ -1,6 +1,15 @@
 trigger:
-- none
+  branches:
+    include:
+      - '*'
 
+
+stages:
+- stage: Parallel Jobs
+  pool: 
+    name: Ubuntu-SelfHostedAgent
+    vmImage: 'Ubuntu-20.04'
+  dependsOn: []
 jobs:
 - job: ParallelHelloWorld
   steps:
