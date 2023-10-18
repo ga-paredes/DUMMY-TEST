@@ -33,3 +33,6 @@ jobs:
             touch $filename
             echo "Created $filename"
         done
+  
+strategy:
+  maxParallel: 2
