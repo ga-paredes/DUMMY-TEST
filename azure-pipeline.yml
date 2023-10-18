@@ -5,6 +5,7 @@ trigger:
 
 stages:
 - stage: PrintHelloWorld
+  dependsOn: []
   jobs:
   - job: PrintHelloWorld
     displayName: 'Imprimir Hola Mundo'
