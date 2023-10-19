@@ -1,0 +1,23 @@
+#Create Public IP
+az network public-ip create -n appgw-pip -g aks-rg --allocation-method Static --sku Standard
+
+#Create vNET
+az network vnet create -n appgw-vnet -g aks-rg --address-prefix 10.0.0.0/16 --subnet-name appgw-snet-01 --subnet-prefix 10.0.0.0/24 
+
+#Create AppGW
+az network application-gateway create -n appgw -g aks-rg --sku Standard_v2 --public-ip-address appgw-pip --vnet-name appgw-vnet --subnet appgw-snet-01 --priority 100
+
+#Enable Add-Ons
+appgwId=$(az network application-gateway show -n appgw -g aks-rg -o tsv --query "id") 
+az aks enable-addons -n aks-smartesting -g aks-rg -a ingress-appgw --appgw-id $appgwId
+
+
+#Peer The Two Virtual Networks Together
+nodeResourceGroup=$(az aks show -n aks-smartesting -g aks-rg -o tsv --query "nodeResourceGroup")
+aksVnetName=$(az network vnet list -g $nodeResourceGroup -o tsv --query "[0].name")
+
+aksVnetId=$(az network vnet show -n $aksVnetName -g $nodeResourceGroup -o tsv --query "id")
+az network vnet peering create -n AppGWtoAKSVnetPeering -g aks-rg --vnet-name appgw-vnet --remote-vnet $aksVnetId --allow-vnet-access
+
+appGWVnetId=$(az network vnet show -n appgw-vnet -g aks-rg  -o tsv --query "id")
+az network vnet peering create -n AKStoAppGWVnetPeering -g $nodeResourceGroup --vnet-name $aksVnetName --remote-vnet $appGWVnetId --allow-vnet-a
