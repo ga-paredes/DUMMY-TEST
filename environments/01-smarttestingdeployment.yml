@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pythonwebapp
+spec:
+  selector:
+    matchLabels:
+      app: pythonwebapp
+  template:
+    metadata:
+      labels:
+        app: pythonwebapp
+    spec:
+      containers:
+      - name: pythonwebapp
+        image: "gaparedes/smarttesting-webapp:40"
+        ports:
+        - containerPort: 8000
+          protocol: TCP
