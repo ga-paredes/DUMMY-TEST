@@ -1,0 +1,1014 @@
+2023-10-20T03:06:23.4395624Z ##[section]Starting: Job
+2023-10-20T03:06:23.6504188Z ##[section]Starting: Initialize job
+2023-10-20T03:06:23.6508542Z Agent name: 'Hosted Agent'
+2023-10-20T03:06:23.6509357Z Agent machine name: 'fv-az162-699'
+2023-10-20T03:06:23.6509844Z Current agent version: '3.227.2'
+2023-10-20T03:06:23.6549017Z ##[group]Operating System
+2023-10-20T03:06:23.6549473Z Ubuntu
+2023-10-20T03:06:23.6549695Z 22.04.3
+2023-10-20T03:06:23.6549910Z LTS
+2023-10-20T03:06:23.6550127Z ##[endgroup]
+2023-10-20T03:06:23.6550395Z ##[group]Runner Image
+2023-10-20T03:06:23.6550736Z Image: ubuntu-22.04
+2023-10-20T03:06:23.6551052Z Version: 20231016.1.0
+2023-10-20T03:06:23.6552207Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20231016.1/images/linux/Ubuntu2204-Readme.md
+2023-10-20T03:06:23.6554020Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20231016.1
+2023-10-20T03:06:23.6555049Z ##[endgroup]
+2023-10-20T03:06:23.6555337Z ##[group]Runner Image Provisioner
+2023-10-20T03:06:23.6555933Z 2.0.312.1
+2023-10-20T03:06:23.6556190Z ##[endgroup]
+2023-10-20T03:06:23.6557276Z Current image version: '20231016.1.0'
+2023-10-20T03:06:23.6559149Z Agent running as: 'vsts'
+2023-10-20T03:06:23.6612127Z Prepare build directory.
+2023-10-20T03:06:23.6947769Z Set build variables.
+2023-10-20T03:06:23.6986224Z Download all required tasks.
+2023-10-20T03:06:23.7150734Z Downloading task: CmdLine (2.229.0)
+2023-10-20T03:06:23.9889507Z Downloading task: Docker (2.221.0)
+2023-10-20T03:06:24.4500252Z Downloading task: SonarQubePrepare (5.17.2)
+2023-10-20T03:06:25.0727132Z Downloading task: SonarQubeAnalyze (5.17.2)
+2023-10-20T03:06:25.4906067Z Downloading task: SonarQubePublish (5.4.2)
+2023-10-20T03:06:25.9039405Z Downloading task: Kubernetes (1.227.0)
+2023-10-20T03:06:27.2547519Z Checking job knob settings.
+2023-10-20T03:06:27.2560776Z    Knob: DockerActionRetries = true Source: $(VSTSAGENT_DOCKER_ACTION_RETRIES) 
+2023-10-20T03:06:27.2562089Z    Knob: AgentToolsDirectory = /opt/hostedtoolcache Source: ${AGENT_TOOLSDIRECTORY} 
+2023-10-20T03:06:27.2564482Z    Knob: AgentPerflog = /home/vsts/perflog Source: ${VSTS_AGENT_PERFLOG} 
+2023-10-20T03:06:27.2566879Z    Knob: AgentEnablePipelineArtifactLargeChunkSize = true Source: $(AGENT_ENABLE_PIPELINEARTIFACT_LARGE_CHUNK_SIZE) 
+2023-10-20T03:06:27.2569692Z    Knob: ContinueAfterCancelProcessTreeKillAttempt = true Source: $(VSTSAGENT_CONTINUE_AFTER_CANCEL_PROCESSTREEKILL_ATTEMPT) 
+2023-10-20T03:06:27.2571227Z    Knob: ProcessHandlerTelemetry = true Source: $(AZP_75787_ENABLE_COLLECT) 
+2023-10-20T03:06:27.2572306Z Finished checking job knob settings.
+2023-10-20T03:06:27.2924038Z Start tracking orphan processes.
+2023-10-20T03:06:27.3109840Z ##[section]Finishing: Initialize job
+2023-10-20T03:06:27.3322077Z ##[section]Async Command Start: DetectDockerContainer
+2023-10-20T03:06:27.3322892Z ##[section]Async Command End: DetectDockerContainer
+2023-10-20T03:06:27.3324033Z ##[section]Async Command Start: DetectDockerContainer
+2023-10-20T03:06:27.3324773Z ##[section]Async Command End: DetectDockerContainer
+2023-10-20T03:06:27.3541354Z ##[section]Starting: Checkout smarttesting.git@develop to s
+2023-10-20T03:06:27.3771535Z ==============================================================================
+2023-10-20T03:06:27.3772423Z Task         : Get sources
+2023-10-20T03:06:27.3772846Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2023-10-20T03:06:27.3773472Z Version      : 1.0.0
+2023-10-20T03:06:27.3773797Z Author       : Microsoft
+2023-10-20T03:06:27.3774294Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2023-10-20T03:06:27.3774793Z ==============================================================================
+2023-10-20T03:06:27.9762781Z Syncing repository: smarttesting.git (Git)
+2023-10-20T03:06:28.0715702Z ##[command]git version
+2023-10-20T03:06:28.1319775Z git version 2.42.0
+2023-10-20T03:06:28.1344088Z ##[command]git lfs version
+2023-10-20T03:06:28.2514279Z git-lfs/3.4.0 (GitHub; linux amd64; go 1.20.6)
+2023-10-20T03:06:28.2543766Z ##[command]git init "/home/vsts/work/1/s"
+2023-10-20T03:06:28.2689758Z hint: Using 'master' as the name for the initial branch. This default branch name
+2023-10-20T03:06:28.2691075Z hint: is subject to change. To configure the initial branch name to use in all
+2023-10-20T03:06:28.2692406Z hint: of your new repositories, which will suppress this warning, call:
+2023-10-20T03:06:28.2693560Z hint: 
+2023-10-20T03:06:28.2694015Z hint: 	git config --global init.defaultBranch <name>
+2023-10-20T03:06:28.2694681Z hint: 
+2023-10-20T03:06:28.2695152Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2023-10-20T03:06:28.2695977Z hint: 'development'. The just-created branch can be renamed via this command:
+2023-10-20T03:06:28.2696704Z hint: 
+2023-10-20T03:06:28.2697029Z hint: 	git branch -m <name>
+2023-10-20T03:06:28.2708600Z Initialized empty Git repository in /home/vsts/work/1/s/.git/
+2023-10-20T03:06:28.2730423Z ##[command]git remote add origin https://***@dev.azure.com/***/SmartTesting%AZP2520-%AZP2520Prueba-Dummy/_git/smarttesting.git
+2023-10-20T03:06:28.2787890Z ##[command]git config gc.auto 0
+2023-10-20T03:06:28.2826867Z ##[command]git config --get-all http.https://***@dev.azure.com/***/SmartTesting%AZP2520-%AZP2520Prueba-Dummy/_git/smarttesting.git.extraheader
+2023-10-20T03:06:28.2862943Z ##[command]git config --get-all http.extraheader
+2023-10-20T03:06:28.2920231Z ##[command]git config --get-regexp .*extraheader
+2023-10-20T03:06:28.2932306Z ##[command]git config --get-all http.proxy
+2023-10-20T03:06:28.3035885Z ##[command]git config http.version HTTP/1.1
+2023-10-20T03:06:28.3128943Z ##[command]git --config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=1 +bf7623490c4f892d5e6b2c69ffe0c837a319994c:refs/remotes/origin/bf7623490c4f892d5e6b2c69ffe0c837a319994c
+2023-10-20T03:06:28.5203409Z remote: Azure Repos        
+2023-10-20T03:06:28.5270283Z remote: 
+2023-10-20T03:06:28.5272049Z remote: Found 12 objects to send. (10 ms)        
+2023-10-20T03:06:28.5421543Z From https://dev.azure.com/***/SmartTesting%20-%20Prueba-Dummy/_git/smarttesting
+2023-10-20T03:06:28.5426846Z  * [new ref]         bf7623490c4f892d5e6b2c69ffe0c837a319994c -> origin/bf7623490c4f892d5e6b2c69ffe0c837a319994c
+2023-10-20T03:06:28.6056334Z ##[command]git --config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=1 +bf7623490c4f892d5e6b2c69ffe0c837a319994c
+2023-10-20T03:06:28.7643085Z remote: Azure Repos        
+2023-10-20T03:06:28.7721699Z remote: 
+2023-10-20T03:06:28.7722315Z remote: Found 0 objects to send. (0 ms)        
+2023-10-20T03:06:28.7824251Z From https://dev.azure.com/***/SmartTesting%20-%20Prueba-Dummy/_git/smarttesting
+2023-10-20T03:06:28.7825694Z  * branch            bf7623490c4f892d5e6b2c69ffe0c837a319994c -> FETCH_HEAD
+2023-10-20T03:06:28.8346250Z ##[command]git checkout --progress --force refs/remotes/origin/bf7623490c4f892d5e6b2c69ffe0c837a319994c
+2023-10-20T03:06:28.8353863Z Note: switching to 'refs/remotes/origin/bf7623490c4f892d5e6b2c69ffe0c837a319994c'.
+2023-10-20T03:06:28.8354468Z 
+2023-10-20T03:06:28.8355034Z You are in 'detached HEAD' state. You can look around, make experimental
+2023-10-20T03:06:28.8355934Z changes and commit them, and you can discard any commits you make in this
+2023-10-20T03:06:28.8356802Z state without impacting any branches by switching back to a branch.
+2023-10-20T03:06:28.8357286Z 
+2023-10-20T03:06:28.8357759Z If you want to create a new branch to retain commits you create, you may
+2023-10-20T03:06:28.8358681Z do so (now or later) by using -c with the switch command. Example:
+2023-10-20T03:06:28.8359120Z 
+2023-10-20T03:06:28.8359461Z   git switch -c <new-branch-name>
+2023-10-20T03:06:28.8359699Z 
+2023-10-20T03:06:28.8359979Z Or undo this operation with:
+2023-10-20T03:06:28.8360184Z 
+2023-10-20T03:06:28.8360447Z   git switch -
+2023-10-20T03:06:28.8360590Z 
+2023-10-20T03:06:28.8361092Z Turn off this advice by setting config variable advice.detachedHead to false
+2023-10-20T03:06:28.8361834Z 
+2023-10-20T03:06:28.8362379Z HEAD is now at bf76234 Update smart-webapp.yml for Azure Pipelines
+2023-10-20T03:06:28.8432745Z ##[section]Finishing: Checkout smarttesting.git@develop to s
+2023-10-20T03:06:28.8468399Z ##[section]Starting: Build Docker Image
+2023-10-20T03:06:28.8475457Z ==============================================================================
+2023-10-20T03:06:28.8475892Z Task         : Command line
+2023-10-20T03:06:28.8476096Z Description  : Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
+2023-10-20T03:06:28.8476736Z Version      : 2.229.0
+2023-10-20T03:06:28.8476906Z Author       : Microsoft Corporation
+2023-10-20T03:06:28.8477178Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/command-line
+2023-10-20T03:06:28.8477787Z ==============================================================================
+2023-10-20T03:06:29.2682708Z Generating script.
+2023-10-20T03:06:29.2692640Z Script contents:
+2023-10-20T03:06:29.2693155Z echo "Build Docker Image"
+2023-10-20T03:06:29.2693962Z ========================== Starting Command Output ===========================
+2023-10-20T03:06:29.2719059Z [command]/usr/bin/bash --noprofile --norc /home/vsts/work/_temp/4601690b-ff0a-49cd-a314-1f1f2771c30f.sh
+2023-10-20T03:06:29.2803449Z Build Docker Image
+2023-10-20T03:06:29.2909899Z ##[section]Finishing: Build Docker Image
+2023-10-20T03:06:29.2940828Z ##[section]Starting: Login to DockerHub
+2023-10-20T03:06:29.2949613Z ==============================================================================
+2023-10-20T03:06:29.2950038Z Task         : Docker
+2023-10-20T03:06:29.2950216Z Description  : Build or push Docker images, login or logout, start or stop containers, or run a Docker command
+2023-10-20T03:06:29.2950951Z Version      : 2.221.0
+2023-10-20T03:06:29.2951134Z Author       : Microsoft Corporation
+2023-10-20T03:06:29.2951391Z Help         : https://aka.ms/azpipes-docker-tsg
+2023-10-20T03:06:29.2951739Z ==============================================================================
+2023-10-20T03:06:29.5868851Z ##[section]Finishing: Login to DockerHub
+2023-10-20T03:06:29.5901229Z ##[section]Starting: SonarQubePrepare
+2023-10-20T03:06:29.5908374Z ==============================================================================
+2023-10-20T03:06:29.5908791Z Task         : Prepare Analysis Configuration
+2023-10-20T03:06:29.5909351Z Description  : Prepare SonarQube analysis configuration
+2023-10-20T03:06:29.5909746Z Version      : 5.17.2
+2023-10-20T03:06:29.5909910Z Author       : sonarsource
+2023-10-20T03:06:29.5910118Z Help         : Version: 5.17.2. [More Information](http://redirect.sonarsource.com/doc/install-configure-scanner-tfs-ts.html)
+2023-10-20T03:06:29.5910919Z ==============================================================================
+2023-10-20T03:06:30.5642611Z ##[section]Finishing: SonarQubePrepare
+2023-10-20T03:06:30.5679386Z ##[section]Starting: Build and Push to DockerHub
+2023-10-20T03:06:30.5686844Z ==============================================================================
+2023-10-20T03:06:30.5687236Z Task         : Docker
+2023-10-20T03:06:30.5687414Z Description  : Build or push Docker images, login or logout, start or stop containers, or run a Docker command
+2023-10-20T03:06:30.5688095Z Version      : 2.221.0
+2023-10-20T03:06:30.5688281Z Author       : Microsoft Corporation
+2023-10-20T03:06:30.5688607Z Help         : https://aka.ms/azpipes-docker-tsg
+2023-10-20T03:06:30.5688908Z ==============================================================================
+2023-10-20T03:06:30.8631325Z [command]/usr/bin/docker build -f /home/vsts/work/1/s/Dockerfile --label com.azure.dev.image.system.teamfoundationcollectionuri=https://dev.azure.com/***/ --label com.azure.dev.image.system.teamproject=SmartTesting - Prueba-Dummy --label com.azure.dev.image.build.repository.name=smarttesting.git --label com.azure.dev.image.build.sourceversion=bf7623490c4f892d5e6b2c69ffe0c837a319994c --label com.azure.dev.image.build.repository.uri=https://***@dev.azure.com/***/SmartTesting%20-%20Prueba-Dummy/_git/smarttesting.git --label com.azure.dev.image.build.sourcebranchname=develop --label com.azure.dev.image.build.definitionname=smart-webapp --label com.azure.dev.image.build.buildnumber=20231020.13 --label com.azure.dev.image.build.builduri=vstfs:///Build/Build/80 -t ***/smart-webapp:latest -t ***/smart-webapp:80 /home/vsts/work/1/s
+2023-10-20T03:06:31.6034470Z #0 building with "default" instance using docker driver
+2023-10-20T03:06:31.6082708Z 
+2023-10-20T03:06:31.6084828Z #1 [internal] load .dockerignore
+2023-10-20T03:06:31.6085476Z #1 transferring context: 2B done
+2023-10-20T03:06:31.6086086Z #1 DONE 0.0s
+2023-10-20T03:06:31.6086636Z 
+2023-10-20T03:06:31.6087044Z #2 [internal] load build definition from Dockerfile
+2023-10-20T03:06:31.6087620Z #2 transferring dockerfile: 544B done
+2023-10-20T03:06:31.6088068Z #2 DONE 0.0s
+2023-10-20T03:06:31.6088209Z 
+2023-10-20T03:06:31.6088649Z #3 resolve image config for docker.io/docker/dockerfile:1.4
+2023-10-20T03:06:31.7409978Z #3 ...
+2023-10-20T03:06:31.7411163Z 
+2023-10-20T03:06:31.7412669Z #4 [auth] docker/dockerfile:pull token for registry-1.docker.io
+2023-10-20T03:06:31.7413402Z #4 DONE 0.0s
+2023-10-20T03:06:31.8903100Z 
+2023-10-20T03:06:31.8903714Z #3 resolve image config for docker.io/docker/dockerfile:1.4
+2023-10-20T03:06:32.1910489Z #3 DONE 0.6s
+2023-10-20T03:06:32.1911178Z 
+2023-10-20T03:06:32.1915815Z #5 docker-image://docker.io/docker/dockerfile:1.4@sha256:9ba7531bd80fb0a858632727cf7a112fbfd19b17e94c4e84ced81e24ef1a0dbc
+2023-10-20T03:06:32.1917658Z #5 resolve docker.io/docker/dockerfile:1.4@sha256:9ba7531bd80fb0a858632727cf7a112fbfd19b17e94c4e84ced81e24ef1a0dbc done
+2023-10-20T03:06:32.3167306Z #5 sha256:1e8a16826fd1c80a63fa6817a9c7284c94e40cded14a9b0d0d3722356efa47bd 2.37kB / 2.37kB done
+2023-10-20T03:06:32.3169825Z #5 sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 9.94MB / 9.94MB 0.2s done
+2023-10-20T03:06:32.3171099Z #5 sha256:9ba7531bd80fb0a858632727cf7a112fbfd19b17e94c4e84ced81e24ef1a0dbc 2.00kB / 2.00kB done
+2023-10-20T03:06:32.3172314Z #5 sha256:ad87fb03593d1b71f9a1cfc1406c4aafcb253b1dabebf569768d6e6166836f34 528B / 528B done
+2023-10-20T03:06:32.3173459Z #5 extracting sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546
+2023-10-20T03:06:32.6176347Z #5 extracting sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 0.2s done
+2023-10-20T03:06:32.6177204Z #5 DONE 0.4s
+2023-10-20T03:06:32.7286992Z 
+2023-10-20T03:06:32.7288515Z #6 [auth] gloursdocker/docker:pull token for registry-1.docker.io
+2023-10-20T03:06:32.8796009Z #6 DONE 0.0s
+2023-10-20T03:06:32.8796183Z 
+2023-10-20T03:06:32.8796953Z #7 [auth] library/python:pull token for registry-1.docker.io
+2023-10-20T03:06:32.8797557Z #7 DONE 0.0s
+2023-10-20T03:06:32.8797685Z 
+2023-10-20T03:06:32.8798446Z #8 [internal] load metadata for docker.io/gloursdocker/docker:latest
+2023-10-20T03:06:33.1694327Z #8 DONE 0.5s
+2023-10-20T03:06:33.1694974Z 
+2023-10-20T03:06:33.1697055Z #9 [internal] load metadata for docker.io/library/python:3.10-alpine
+2023-10-20T03:06:33.1697912Z #9 DONE 0.5s
+2023-10-20T03:06:33.8745026Z 
+2023-10-20T03:06:33.8745775Z #10 [internal] load build context
+2023-10-20T03:06:33.8746364Z #10 DONE 0.0s
+2023-10-20T03:06:33.8746520Z 
+2023-10-20T03:06:33.8747915Z #11 [builder 1/5] FROM docker.io/library/python:3.10-alpine@sha256:28986068e3a715708b7f2e0fc4c06c748fe882fb76403424c2e854483fb45304
+2023-10-20T03:06:33.8749909Z #11 resolve docker.io/library/python:3.10-alpine@sha256:28986068e3a715708b7f2e0fc4c06c748fe882fb76403424c2e854483fb45304 0.0s done
+2023-10-20T03:06:33.9942270Z #11 ...
+2023-10-20T03:06:33.9943006Z 
+2023-10-20T03:06:33.9944799Z #10 [internal] load build context
+2023-10-20T03:06:33.9945978Z #10 transferring context: 39.79kB 0.0s done
+2023-10-20T03:06:33.9947198Z #10 DONE 0.0s
+2023-10-20T03:06:33.9948699Z 
+2023-10-20T03:06:33.9951307Z #11 [builder 1/5] FROM docker.io/library/python:3.10-alpine@sha256:28986068e3a715708b7f2e0fc4c06c748fe882fb76403424c2e854483fb45304
+2023-10-20T03:06:33.9958644Z #11 extracting sha256:430548f4d4bf7cdf8dc1e14a535a6ae863ecace3300d9f2b84ced5df27d88721
+2023-10-20T03:06:34.1074559Z #11 sha256:28986068e3a715708b7f2e0fc4c06c748fe882fb76403424c2e854483fb45304 1.65kB / 1.65kB done
+2023-10-20T03:06:34.1081080Z #11 sha256:4b062a3861ac865436439499d9a03e055871a0f465833987d23b67364a35a38f 1.37kB / 1.37kB done
+2023-10-20T03:06:34.1088097Z #11 sha256:d19326e1ec1032d12794704db7486f49e6eb64b1a340398c451a662942722be6 6.27kB / 6.27kB done
+2023-10-20T03:06:34.1100270Z #11 sha256:430548f4d4bf7cdf8dc1e14a535a6ae863ecace3300d9f2b84ced5df27d88721 622.32kB / 622.32kB 0.1s done
+2023-10-20T03:06:34.1106583Z #11 sha256:66a1fee46239226b3b105569b732a7e8663e61a2069dfa2c3e578883e8ee4264 11.53MB / 12.44MB 0.2s
+2023-10-20T03:06:34.1111957Z #11 sha256:885a22b65e87121d566cfc3073f859468d93d902112d0ff218456edeb2fae22c 240B / 240B 0.1s done
+2023-10-20T03:06:34.1117705Z #11 sha256:a975a5774afd94c2dbfda4ec2b6c75fe75649147d510034ae056dc2201e8c7bd 1.05MB / 3.08MB 0.2s
+2023-10-20T03:06:34.2633001Z #11 extracting sha256:430548f4d4bf7cdf8dc1e14a535a6ae863ecace3300d9f2b84ced5df27d88721 0.2s done
+2023-10-20T03:06:34.2634360Z #11 sha256:66a1fee46239226b3b105569b732a7e8663e61a2069dfa2c3e578883e8ee4264 12.44MB / 12.44MB 0.2s done
+2023-10-20T03:06:34.2635696Z #11 sha256:a975a5774afd94c2dbfda4ec2b6c75fe75649147d510034ae056dc2201e8c7bd 3.08MB / 3.08MB 0.3s done
+2023-10-20T03:06:34.4811780Z #11 extracting sha256:66a1fee46239226b3b105569b732a7e8663e61a2069dfa2c3e578883e8ee4264
+2023-10-20T03:06:35.3735231Z #11 extracting sha256:66a1fee46239226b3b105569b732a7e8663e61a2069dfa2c3e578883e8ee4264 0.9s done
+2023-10-20T03:06:35.6871591Z #11 extracting sha256:885a22b65e87121d566cfc3073f859468d93d902112d0ff218456edeb2fae22c done
+2023-10-20T03:06:35.6872808Z #11 extracting sha256:a975a5774afd94c2dbfda4ec2b6c75fe75649147d510034ae056dc2201e8c7bd
+2023-10-20T03:06:36.1617067Z #11 extracting sha256:a975a5774afd94c2dbfda4ec2b6c75fe75649147d510034ae056dc2201e8c7bd 0.4s done
+2023-10-20T03:06:36.2823389Z #11 DONE 2.4s
+2023-10-20T03:06:36.2823856Z 
+2023-10-20T03:06:36.2824234Z #12 [builder 2/5] WORKDIR /app
+2023-10-20T03:06:36.2825903Z #12 DONE 0.0s
+2023-10-20T03:06:36.2826272Z 
+2023-10-20T03:06:36.2826617Z #13 [builder 3/5] COPY requirements.txt /app
+2023-10-20T03:06:36.3830085Z #13 DONE 0.0s
+2023-10-20T03:06:36.3830437Z 
+2023-10-20T03:06:36.3831298Z #14 FROM docker.io/gloursdocker/docker@sha256:756a5712056c43dc5028b0dc8bfd9dbd171fce27f8c6b24ae5f5839ff7f2af1f
+2023-10-20T03:06:36.3832949Z #14 resolve docker.io/gloursdocker/docker@sha256:756a5712056c43dc5028b0dc8bfd9dbd171fce27f8c6b24ae5f5839ff7f2af1f 0.0s done
+2023-10-20T03:06:36.3834395Z #14 sha256:756a5712056c43dc5028b0dc8bfd9dbd171fce27f8c6b24ae5f5839ff7f2af1f 743B / 743B done
+2023-10-20T03:06:36.3835594Z #14 sha256:a66243282b1165f556ec4a91d749c1ebc81dd28bcfbce653ccf49b01ae3b3fdf 1.38kB / 1.38kB done
+2023-10-20T03:06:36.3837121Z #14 sha256:92e7e46848c6c339bb2f1febd550de4f522044f07506eb1e0286debe7f9fa194 1.41kB / 1.41kB done
+2023-10-20T03:06:36.3838520Z #14 sha256:4c46afcb7b05961b847d32668a60587f14cf0d3fbd2e1496ae9b962bd0432358 14.21MB / 14.21MB 0.4s done
+2023-10-20T03:06:36.3839849Z #14 sha256:0a53c98509c9970d35031e10ab927102abdb60c392f5fa553eaa14e6c926e5f7 16.53MB / 16.53MB 0.6s done
+2023-10-20T03:06:36.3841194Z #14 sha256:54c8d0aeda9acc625c4a72ea072f3a0c8162eb0109843d6f7c4b712fe8e18719 8.76MB / 8.76MB 0.5s done
+2023-10-20T03:06:36.3842483Z #14 extracting sha256:4c46afcb7b05961b847d32668a60587f14cf0d3fbd2e1496ae9b962bd0432358 1.0s done
+2023-10-20T03:06:36.3843775Z #14 sha256:5260ebcf1b8504e0a22bb281723af6850bfea34dd9f04b7b953673017bb3a8da 25.70MB / 25.70MB 0.8s done
+2023-10-20T03:06:36.3845103Z #14 sha256:cf15776e3fa83217ec1fe19d133f2bd4add7b95300e1bfd7bede7c7d686dd5bf 5.02MB / 5.02MB 0.7s done
+2023-10-20T03:06:36.3846388Z #14 extracting sha256:0a53c98509c9970d35031e10ab927102abdb60c392f5fa553eaa14e6c926e5f7 0.8s done
+2023-10-20T03:06:36.3847625Z #14 extracting sha256:54c8d0aeda9acc625c4a72ea072f3a0c8162eb0109843d6f7c4b712fe8e18719 0.2s
+2023-10-20T03:06:36.6273584Z #14 extracting sha256:54c8d0aeda9acc625c4a72ea072f3a0c8162eb0109843d6f7c4b712fe8e18719 0.4s done
+2023-10-20T03:06:36.6274853Z #14 extracting sha256:5260ebcf1b8504e0a22bb281723af6850bfea34dd9f04b7b953673017bb3a8da
+2023-10-20T03:06:37.6056767Z #14 extracting sha256:5260ebcf1b8504e0a22bb281723af6850bfea34dd9f04b7b953673017bb3a8da 0.8s done
+2023-10-20T03:06:37.6058026Z #14 extracting sha256:cf15776e3fa83217ec1fe19d133f2bd4add7b95300e1bfd7bede7c7d686dd5bf
+2023-10-20T03:06:37.9630146Z #14 extracting sha256:cf15776e3fa83217ec1fe19d133f2bd4add7b95300e1bfd7bede7c7d686dd5bf 0.2s done
+2023-10-20T03:06:37.9631047Z #14 DONE 4.1s
+2023-10-20T03:06:37.9631196Z 
+2023-10-20T03:06:37.9632208Z #15 [builder 4/5] RUN --mount=type=cache,target=/root/.cache/pip     pip3 install -r requirements.txt
+2023-10-20T03:06:39.1519238Z #15 2.821 Collecting flask
+2023-10-20T03:06:39.1520598Z #15 2.861   Downloading flask-3.0.0-py3-none-any.whl (99 kB)
+2023-10-20T03:06:39.2521564Z #15 2.882      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 5.5 MB/s eta 0:00:00
+2023-10-20T03:06:39.2523028Z #15 2.923 Collecting Jinja2>=3.1.2
+2023-10-20T03:06:39.2524676Z #15 2.930   Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+2023-10-20T03:06:39.2525698Z #15 2.939      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 kB 22.1 MB/s eta 0:00:00
+2023-10-20T03:06:39.2526390Z #15 2.961 Collecting itsdangerous>=2.1.2
+2023-10-20T03:06:39.3610123Z #15 2.967   Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+2023-10-20T03:06:39.3611130Z #15 3.000 Collecting click>=8.1.3
+2023-10-20T03:06:39.3612094Z #15 3.021   Downloading click-8.1.7-py3-none-any.whl (97 kB)
+2023-10-20T03:06:39.3614354Z #15 3.028      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.9/97.9 kB 22.0 MB/s eta 0:00:00
+2023-10-20T03:06:39.3615189Z #15 3.070 Collecting Werkzeug>=3.0.0
+2023-10-20T03:06:39.4749982Z #15 3.075   Downloading werkzeug-3.0.0-py3-none-any.whl (226 kB)
+2023-10-20T03:06:39.4752096Z #15 3.084      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.6/226.6 kB 39.3 MB/s eta 0:00:00
+2023-10-20T03:06:39.4764271Z #15 3.101 Collecting blinker>=1.6.2
+2023-10-20T03:06:39.4768576Z #15 3.107   Downloading blinker-1.6.3-py3-none-any.whl (13 kB)
+2023-10-20T03:06:39.4769785Z #15 3.184 Collecting MarkupSafe>=2.0
+2023-10-20T03:06:39.6252517Z #15 3.193   Downloading MarkupSafe-2.1.3-cp310-cp310-musllinux_1_1_x86_64.whl (29 kB)
+2023-10-20T03:06:39.6255149Z #15 3.272 Installing collected packages: MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, flask
+2023-10-20T03:06:40.1913356Z #15 3.789 Successfully installed Jinja2-3.1.2 MarkupSafe-2.1.3 Werkzeug-3.0.0 blinker-1.6.3 click-8.1.7 flask-3.0.0 itsdangerous-2.1.2
+2023-10-20T03:06:40.1916087Z #15 3.790 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+2023-10-20T03:06:40.1918167Z #15 3.900 
+2023-10-20T03:06:40.1918782Z #15 3.900 [notice] A new release of pip is available: 23.0.1 -> 23.3
+2023-10-20T03:06:40.1919645Z #15 3.900 [notice] To update, run: pip install --upgrade pip
+2023-10-20T03:06:40.3413564Z #15 DONE 4.0s
+2023-10-20T03:06:40.4921331Z 
+2023-10-20T03:06:40.4922655Z #16 [builder 5/5] COPY . /app
+2023-10-20T03:06:40.4923443Z #16 DONE 0.0s
+2023-10-20T03:06:40.4923996Z 
+2023-10-20T03:06:40.4925112Z #17 [dev-envs 1/3] RUN <<EOF (apk update...)
+2023-10-20T03:06:40.6165788Z #17 0.231 fetch https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/APKINDEX.tar.gz
+2023-10-20T03:06:40.8889386Z #17 0.503 fetch https://dl-cdn.alpinelinux.org/alpine/v3.18/community/x86_64/APKINDEX.tar.gz
+2023-10-20T03:06:41.3401975Z #17 0.817 v3.18.4-86-g1fabaf5fe24 [https://dl-cdn.alpinelinux.org/alpine/v3.18/main]
+2023-10-20T03:06:41.3403557Z #17 0.817 v3.18.4-87-g58e88fca28e [https://dl-cdn.alpinelinux.org/alpine/v3.18/community]
+2023-10-20T03:06:41.3404469Z #17 0.817 OK: 20069 distinct packages available
+2023-10-20T03:06:41.6408880Z #17 1.196 (1/7) Installing brotli-libs (1.0.9-r14)
+2023-10-20T03:06:41.7920199Z #17 1.269 (2/7) Installing libunistring (1.1-r1)
+2023-10-20T03:06:41.7920844Z #17 1.291 (3/7) Installing libidn2 (2.3.4-r1)
+2023-10-20T03:06:41.7921730Z #17 1.301 (4/7) Installing nghttp2-libs (1.57.0-r0)
+2023-10-20T03:06:41.7922335Z #17 1.311 (5/7) Installing libcurl (8.4.0-r0)
+2023-10-20T03:06:41.7922924Z #17 1.324 (6/7) Installing pcre2 (10.42-r1)
+2023-10-20T03:06:41.7923540Z #17 1.336 (7/7) Installing git (2.40.1-r0)
+2023-10-20T03:06:41.9428579Z #17 1.429 Executing busybox-1.36.1-r2.trigger
+2023-10-20T03:06:41.9429171Z #17 1.438 OK: 25 MiB in 45 packages
+2023-10-20T03:06:42.0932114Z #17 DONE 1.6s
+2023-10-20T03:06:42.0932768Z 
+2023-10-20T03:06:42.0934194Z #18 [dev-envs 2/3] RUN <<EOF (addgroup -S docker...)
+2023-10-20T03:06:42.3971487Z #18 DONE 0.3s
+2023-10-20T03:06:42.3972090Z 
+2023-10-20T03:06:42.3973637Z #19 [dev-envs 3/3] COPY --from=gloursdocker/docker / /
+2023-10-20T03:06:43.4494087Z #19 DONE 1.0s
+2023-10-20T03:06:43.4494296Z 
+2023-10-20T03:06:43.4494608Z #20 exporting to image
+2023-10-20T03:06:43.4495056Z #20 exporting layers
+2023-10-20T03:06:45.0568888Z #20 exporting layers 1.7s done
+2023-10-20T03:06:45.0570048Z #20 writing image sha256:23bb67dd7684f4db2c76c7f048f9c58dd4c80818f11277c3be603191df374062 done
+2023-10-20T03:06:45.0571522Z #20 naming to docker.io/***/smart-webapp:latest
+2023-10-20T03:06:45.0807717Z #20 naming to docker.io/***/smart-webapp:latest done
+2023-10-20T03:06:45.0826396Z #20 naming to docker.io/***/smart-webapp:80 done
+2023-10-20T03:06:45.0826951Z #20 DONE 1.7s
+2023-10-20T03:06:45.0970944Z ##[warning]No data was written into the file /home/vsts/work/_temp/task_outputs/build_1697771205086.txt
+2023-10-20T03:06:45.1062481Z [command]/usr/bin/docker images
+2023-10-20T03:06:45.1110811Z [command]/usr/bin/docker push ***/smart-webapp:latest
+2023-10-20T03:06:45.1214573Z REPOSITORY               TAG         IMAGE ID       CREATED         SIZE
+2023-10-20T03:06:45.1215977Z ***/smart-webapp   80          23bb67dd7684   2 seconds ago   288MB
+2023-10-20T03:06:45.1217058Z ***/smart-webapp   latest      23bb67dd7684   2 seconds ago   288MB
+2023-10-20T03:06:45.1217891Z node                     18          608191798093   3 days ago      1.09GB
+2023-10-20T03:06:45.1218781Z node                     18-alpine   5b9bcd66c7b9   3 days ago      177MB
+2023-10-20T03:06:45.1219558Z node                     20          9d4803da3a41   3 days ago      1.1GB
+2023-10-20T03:06:45.1220422Z node                     20-alpine   139b174fc024   3 days ago      182MB
+2023-10-20T03:06:45.1221385Z buildpack-deps           buster      812562bb54bb   8 days ago      802MB
+2023-10-20T03:06:45.1222442Z buildpack-deps           bullseye    1bd9f475bf39   8 days ago      834MB
+2023-10-20T03:06:45.1223219Z debian                   10          75719d2c3a70   8 days ago      114MB
+2023-10-20T03:06:45.1224048Z debian                   11          7fc304c3e97a   8 days ago      124MB
+2023-10-20T03:06:45.1225176Z ubuntu                   22.04       e4c58958181a   2 weeks ago     77.8MB
+2023-10-20T03:06:45.1225862Z ubuntu                   20.04       bf40b7bc7a11   2 weeks ago     72.8MB
+2023-10-20T03:06:45.1226497Z alpine                   3.18        8ca4688f4f35   3 weeks ago     7.33MB
+2023-10-20T03:06:45.1227128Z node                     16          1ddc7e4055fd   6 weeks ago     909MB
+2023-10-20T03:06:45.1228376Z moby/buildkit            latest      9291fad3b41c   8 weeks ago     172MB
+2023-10-20T03:06:45.1229111Z node                     16-alpine   2573171e0124   2 months ago    118MB
+2023-10-20T03:06:45.1229876Z alpine                   3.16        187eae39ad94   2 months ago    5.54MB
+2023-10-20T03:06:45.1230531Z alpine                   3.17        1e0b8b5322fc   2 months ago    7.05MB
+2023-10-20T03:06:45.1231190Z ubuntu                   18.04       f9a80a55f492   4 months ago    63.2MB
+2023-10-20T03:06:45.1231820Z node                     14          1d12470fa662   6 months ago    912MB
+2023-10-20T03:06:45.1232551Z node                     14-alpine   0dac3dc27b1a   6 months ago    119MB
+2023-10-20T03:06:45.1363708Z The push refers to repository [docker.io/***/smart-webapp]
+2023-10-20T03:06:45.2134905Z 451e981d878b: Preparing
+2023-10-20T03:06:45.2135723Z 701469d2fcd5: Preparing
+2023-10-20T03:06:45.2136207Z ada47ae6a8be: Preparing
+2023-10-20T03:06:45.2136658Z 35160ce7e47b: Preparing
+2023-10-20T03:06:45.2137299Z 0500a4443d35: Preparing
+2023-10-20T03:06:45.2137822Z e2c605c10d70: Preparing
+2023-10-20T03:06:45.2138348Z b577a68d3708: Preparing
+2023-10-20T03:06:45.2138878Z bd5ef547d2c5: Preparing
+2023-10-20T03:06:45.2139395Z 351cad859054: Preparing
+2023-10-20T03:06:45.2139924Z 655198633c3b: Preparing
+2023-10-20T03:06:45.2140447Z 6f25d7d19389: Preparing
+2023-10-20T03:06:45.2140963Z cc2447e1835a: Preparing
+2023-10-20T03:06:45.2141482Z e2c605c10d70: Waiting
+2023-10-20T03:06:45.2141996Z b577a68d3708: Waiting
+2023-10-20T03:06:45.2142503Z bd5ef547d2c5: Waiting
+2023-10-20T03:06:45.2142996Z 351cad859054: Waiting
+2023-10-20T03:06:45.2143525Z 655198633c3b: Waiting
+2023-10-20T03:06:45.2144031Z 6f25d7d19389: Waiting
+2023-10-20T03:06:45.2144795Z cc2447e1835a: Waiting
+2023-10-20T03:06:46.7851952Z 701469d2fcd5: Pushed
+2023-10-20T03:06:47.0828773Z 35160ce7e47b: Pushed
+2023-10-20T03:06:47.7221687Z 0500a4443d35: Pushed
+2023-10-20T03:06:47.8239638Z bd5ef547d2c5: Layer already exists
+2023-10-20T03:06:47.9415950Z ada47ae6a8be: Pushed
+2023-10-20T03:06:47.9456435Z 351cad859054: Layer already exists
+2023-10-20T03:06:48.0482556Z e2c605c10d70: Pushed
+2023-10-20T03:06:48.0587206Z 655198633c3b: Layer already exists
+2023-10-20T03:06:48.0722031Z 6f25d7d19389: Layer already exists
+2023-10-20T03:06:48.1792681Z cc2447e1835a: Layer already exists
+2023-10-20T03:06:48.6286340Z b577a68d3708: Pushed
+2023-10-20T03:06:59.4198167Z 451e981d878b: Pushed
+2023-10-20T03:07:01.2129939Z latest: digest: sha256:f39884c3d6533d4e068766afb9a6f3829ba4c609e24a64777e93aeb14c137a31 size: 2832
+2023-10-20T03:07:01.2196599Z [command]/usr/bin/docker history --format createdAt:{{.CreatedAt}}; layerSize:{{.Size}}; createdBy:{{.CreatedBy}}; layerId:{{.ID}} --no-trunc ***/smart-webapp:latest
+2023-10-20T03:07:01.2270880Z [command]/usr/bin/docker push ***/smart-webapp:80
+2023-10-20T03:07:01.2417069Z createdAt:2023-10-20T03:06:43Z; layerSize:214MB; createdBy:COPY / / # buildkit; layerId:sha256:23bb67dd7684f4db2c76c7f048f9c58dd4c80818f11277c3be603191df374062
+2023-10-20T03:07:01.2419240Z createdAt:2023-10-20T03:06:42Z; layerSize:4.7kB; createdBy:RUN /bin/sh -c addgroup -S docker
+2023-10-20T03:07:01.2420659Z adduser -S --shell /bin/bash --ingroup docker vscode
+2023-10-20T03:07:01.2421852Z  # buildkit; layerId:<missing>
+2023-10-20T03:07:01.2423002Z createdAt:2023-10-20T03:06:41Z; layerSize:12MB; createdBy:RUN /bin/sh -c apk update
+2023-10-20T03:07:01.2423793Z apk add git
+2023-10-20T03:07:01.2424126Z  # buildkit; layerId:<missing>
+2023-10-20T03:07:01.2425223Z createdAt:2023-10-20T03:06:41Z; layerSize:0B; createdBy:CMD ["app.py"]; layerId:<missing>
+2023-10-20T03:07:01.2427021Z createdAt:2023-10-20T03:06:41Z; layerSize:0B; createdBy:ENTRYPOINT ["python3"]; layerId:<missing>
+2023-10-20T03:07:01.2428523Z createdAt:2023-10-20T03:06:40Z; layerSize:35.9kB; createdBy:COPY . /app # buildkit; layerId:<missing>
+2023-10-20T03:07:01.2430322Z createdAt:2023-10-20T03:06:40Z; layerSize:10.9MB; createdBy:RUN /bin/sh -c pip3 install -r requirements.txt # buildkit; layerId:<missing>
+2023-10-20T03:07:01.2432192Z createdAt:2023-10-20T03:06:36Z; layerSize:6B; createdBy:COPY requirements.txt /app # buildkit; layerId:<missing>
+2023-10-20T03:07:01.2433636Z createdAt:2023-10-20T03:06:36Z; layerSize:0B; createdBy:WORKDIR /app; layerId:<missing>
+2023-10-20T03:07:01.2434971Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:CMD ["python3"]; layerId:<missing>
+2023-10-20T03:07:01.2438951Z createdAt:2023-10-15T21:49:12Z; layerSize:11MB; createdBy:RUN /bin/sh -c set -eux;   wget -O get-pip.py "$PYTHON_GET_PIP_URL";  echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -;   export PYTHONDONTWRITEBYTECODE=1;   python get-pip.py   --disable-pip-version-check   --no-cache-dir   --no-compile   "pip==$PYTHON_PIP_VERSION"   "setuptools==$PYTHON_SETUPTOOLS_VERSION"  ;  rm -f get-pip.py;   pip --version # buildkit; layerId:<missing>
+2023-10-20T03:07:01.2443382Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV PYTHON_GET_PIP_SHA256=22b849a10f86f5ddf7ce148ca2a31214504ee6c83ef626840fde6e5dcd809d11; layerId:<missing>
+2023-10-20T03:07:01.2446237Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/c6add47b0abf67511cdfb4734771cbab403af062/public/get-pip.py; layerId:<missing>
+2023-10-20T03:07:01.2448556Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV PYTHON_SETUPTOOLS_VERSION=65.5.1; layerId:<missing>
+2023-10-20T03:07:01.2450158Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV PYTHON_PIP_VERSION=23.0.1; layerId:<missing>
+2023-10-20T03:07:01.2453119Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:RUN /bin/sh -c set -eux;  for src in idle3 pydoc3 python3 python3-config; do   dst="$(echo "$src" | tr -d 3)";   [ -s "/usr/local/bin/$src" ];   [ ! -e "/usr/local/bin/$dst" ];   ln -svT "$src" "/usr/local/bin/$dst";  done # buildkit; layerId:<missing>
+2023-10-20T03:07:01.2472774Z createdAt:2023-10-15T21:49:12Z; layerSize:30.4MB; createdBy:RUN /bin/sh -c set -eux;   apk add --no-cache --virtual .build-deps   gnupg   tar   xz     bluez-dev   bzip2-dev   dpkg-dev dpkg   expat-dev   findutils   gcc   gdbm-dev   libc-dev   libffi-dev   libnsl-dev   libtirpc-dev   linux-headers   make   ncurses-dev   openssl-dev   pax-utils   readline-dev   sqlite-dev   tcl-dev   tk   tk-dev   util-linux-dev   xz-dev   zlib-dev  ;   wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz";  wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc";  GNUPGHOME="$(mktemp -d)"; export GNUPGHOME;  gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$GPG_KEY";  gpg --batch --verify python.tar.xz.asc python.tar.xz;  gpgconf --kill all;  rm -rf "$GNUPGHOME" python.tar.xz.asc;  mkdir -p /usr/src/python;  tar --extract --directory /usr/src/python --strip-components=1 --file python.tar.xz;  rm python.tar.xz;   cd /usr/src/python;  gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)";  ./configure   --build="$gnuArch"   --enable-loadable-sqlite-extensions   --enable-optimizations   --enable-option-checking=fatal   --enable-shared   --with-lto   --with-system-expat   --without-ensurepip  ;  nproc="$(nproc)";  EXTRA_CFLAGS="-DTHREAD_STACK_SIZE=0x100000";  LDFLAGS="${LDFLAGS:--Wl},--strip-all";  make -j "$nproc"   "EXTRA_CFLAGS=${EXTRA_CFLAGS:-}"   "LDFLAGS=${LDFLAGS:-}"   "PROFILE_TASK=${PROFILE_TASK:-}"  ;  rm python;  make -j "$nproc"   "EXTRA_CFLAGS=${EXTRA_CFLAGS:-}"   "LDFLAGS=${LDFLAGS:--Wl},-rpath='\$\$ORIGIN/../lib'"   "PROFILE_TASK=${PROFILE_TASK:-}"   python  ;  make install;   cd /;  rm -rf /usr/src/python;   find /usr/local -depth   \(    \( -type d -a \( -name test -o -name tests -o -name idle_test \) \)    -o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name 'libpython*.a' \) \)   \) -exec rm -rf '{}' +  ;   find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec scanelf --needed --nobanner --format '%n#p' '{}' ';'   | tr ',' '\n'   | sort -u   | awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }'   | xargs -rt apk add --no-network --virtual .python-rundeps  ;  apk del --no-network .build-deps;   python3 --version # buildkit; layerId:<missing>
+2023-10-20T03:07:01.2489168Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV PYTHON_VERSION=3.10.13; layerId:<missing>
+2023-10-20T03:07:01.2490912Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D; layerId:<missing>
+2023-10-20T03:07:01.2493051Z createdAt:2023-10-15T21:49:12Z; layerSize:1.63MB; createdBy:RUN /bin/sh -c set -eux;  apk add --no-cache   ca-certificates   tzdata  ; # buildkit; layerId:<missing>
+2023-10-20T03:07:01.2494879Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV LANG=C.UTF-8; layerId:<missing>
+2023-10-20T03:07:01.2496865Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin; layerId:<missing>
+2023-10-20T03:07:01.2498815Z createdAt:2023-09-28T21:19:27Z; layerSize:0B; createdBy:/bin/sh -c #(nop)  CMD ["/bin/sh"]; layerId:<missing>
+2023-10-20T03:07:01.2500942Z createdAt:2023-09-28T21:19:27Z; layerSize:7.33MB; createdBy:/bin/sh -c #(nop) ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / ; layerId:<missing>
+2023-10-20T03:07:01.2539390Z [command]/usr/bin/docker inspect 23bb67dd7684f4db2c76c7f048f9c58dd4c80818f11277c3be603191df374062 -f {{.RootFS.Layers}}
+2023-10-20T03:07:01.2685980Z The push refers to repository [docker.io/***/smart-webapp]
+2023-10-20T03:07:01.2781742Z [sha256:cc2447e1835a40530975ab80bb1f872fbab0f2a0faecf2ab16fbbb89b3589438 sha256:6f25d7d19389be3c6552c8f508665895417415dae09314c2b7674827bf19eada sha256:655198633c3b658f7dbf8a033604f62ac691841f42df62caa579e87baf82d739 sha256:351cad859054bdd09bf85bd4259bd97655198957845ebb5ebb601dc48db43945 sha256:bd5ef547d2c5390a62f61ead9b063ba0ae14527aaf523dc52b42cbc90edf922c sha256:b577a68d3708401eed46fc934d090444c23f4da51c2527a5b2982d81f29ef6c7 sha256:e2c605c10d7092ba1e826ecf3e7dd48d8e6e5240b27bb5a6bb9c6d0d8d235e3e sha256:0500a4443d35ab7a56e027adfb4f04edab35a5089ae9d2ac2ddcbf89520c7e9f sha256:35160ce7e47ba75a08978b1ee45f1bd29a52420f92925b73baf6f54dca92e8a8 sha256:ada47ae6a8bec48db49de9b61c7cb74cac37040d8ee93dd53f100861eb8c4af3 sha256:701469d2fcd52dbce3432aa6a2b949566de6f5c9d2adb77fb47a0abf5102279b sha256:451e981d878bc2edfd6b6948ecd63c82dcc48a0fea2e524bcd4c6f882103f8ea]
+2023-10-20T03:07:01.3555229Z 451e981d878b: Preparing
+2023-10-20T03:07:01.3556274Z 701469d2fcd5: Preparing
+2023-10-20T03:07:01.3557409Z ada47ae6a8be: Preparing
+2023-10-20T03:07:01.3557849Z 35160ce7e47b: Preparing
+2023-10-20T03:07:01.3558256Z 0500a4443d35: Preparing
+2023-10-20T03:07:01.3558638Z e2c605c10d70: Preparing
+2023-10-20T03:07:01.3559012Z b577a68d3708: Preparing
+2023-10-20T03:07:01.3559385Z bd5ef547d2c5: Preparing
+2023-10-20T03:07:01.3559746Z 351cad859054: Preparing
+2023-10-20T03:07:01.3560121Z 655198633c3b: Preparing
+2023-10-20T03:07:01.3560489Z 6f25d7d19389: Preparing
+2023-10-20T03:07:01.3560845Z cc2447e1835a: Preparing
+2023-10-20T03:07:01.3561214Z b577a68d3708: Waiting
+2023-10-20T03:07:01.3561569Z bd5ef547d2c5: Waiting
+2023-10-20T03:07:01.3561974Z 351cad859054: Waiting
+2023-10-20T03:07:01.3562328Z 655198633c3b: Waiting
+2023-10-20T03:07:01.3562681Z 6f25d7d19389: Waiting
+2023-10-20T03:07:01.3563065Z cc2447e1835a: Waiting
+2023-10-20T03:07:01.3563417Z e2c605c10d70: Waiting
+2023-10-20T03:07:01.5895230Z 451e981d878b: Layer already exists
+2023-10-20T03:07:01.6181570Z 0500a4443d35: Layer already exists
+2023-10-20T03:07:01.6536805Z 701469d2fcd5: Layer already exists
+2023-10-20T03:07:01.7760325Z bd5ef547d2c5: Layer already exists
+2023-10-20T03:07:01.7818107Z ada47ae6a8be: Layer already exists
+2023-10-20T03:07:01.7983589Z 35160ce7e47b: Layer already exists
+2023-10-20T03:07:01.8978777Z 351cad859054: Layer already exists
+2023-10-20T03:07:01.9031313Z e2c605c10d70: Layer already exists
+2023-10-20T03:07:01.9069801Z 655198633c3b: Layer already exists
+2023-10-20T03:07:01.9276355Z 6f25d7d19389: Layer already exists
+2023-10-20T03:07:02.0221261Z b577a68d3708: Layer already exists
+2023-10-20T03:07:02.0231822Z cc2447e1835a: Layer already exists
+2023-10-20T03:07:02.8763752Z 80: digest: sha256:f39884c3d6533d4e068766afb9a6f3829ba4c609e24a64777e93aeb14c137a31 size: 2832
+2023-10-20T03:07:02.8806779Z [command]/usr/bin/docker history --format createdAt:{{.CreatedAt}}; layerSize:{{.Size}}; createdBy:{{.CreatedBy}}; layerId:{{.ID}} --no-trunc ***/smart-webapp:80
+2023-10-20T03:07:02.9051841Z createdAt:2023-10-20T03:06:43Z; layerSize:214MB; createdBy:COPY / / # buildkit; layerId:sha256:23bb67dd7684f4db2c76c7f048f9c58dd4c80818f11277c3be603191df374062
+2023-10-20T03:07:02.9054056Z createdAt:2023-10-20T03:06:42Z; layerSize:4.7kB; createdBy:RUN /bin/sh -c addgroup -S docker
+2023-10-20T03:07:02.9056421Z adduser -S --shell /bin/bash --ingroup docker vscode
+2023-10-20T03:07:02.9057660Z  # buildkit; layerId:<missing>
+2023-10-20T03:07:02.9058750Z createdAt:2023-10-20T03:06:41Z; layerSize:12MB; createdBy:RUN /bin/sh -c apk update
+2023-10-20T03:07:02.9059948Z apk add git
+2023-10-20T03:07:02.9060460Z  # buildkit; layerId:<missing>
+2023-10-20T03:07:02.9061765Z createdAt:2023-10-20T03:06:41Z; layerSize:0B; createdBy:CMD ["app.py"]; layerId:<missing>
+2023-10-20T03:07:02.9063321Z createdAt:2023-10-20T03:06:41Z; layerSize:0B; createdBy:ENTRYPOINT ["python3"]; layerId:<missing>
+2023-10-20T03:07:02.9065396Z createdAt:2023-10-20T03:06:40Z; layerSize:35.9kB; createdBy:COPY . /app # buildkit; layerId:<missing>
+2023-10-20T03:07:02.9067490Z createdAt:2023-10-20T03:06:40Z; layerSize:10.9MB; createdBy:RUN /bin/sh -c pip3 install -r requirements.txt # buildkit; layerId:<missing>
+2023-10-20T03:07:02.9069757Z createdAt:2023-10-20T03:06:36Z; layerSize:6B; createdBy:COPY requirements.txt /app # buildkit; layerId:<missing>
+2023-10-20T03:07:02.9071401Z createdAt:2023-10-20T03:06:36Z; layerSize:0B; createdBy:WORKDIR /app; layerId:<missing>
+2023-10-20T03:07:02.9073130Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:CMD ["python3"]; layerId:<missing>
+2023-10-20T03:07:02.9077226Z createdAt:2023-10-15T21:49:12Z; layerSize:11MB; createdBy:RUN /bin/sh -c set -eux;   wget -O get-pip.py "$PYTHON_GET_PIP_URL";  echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -;   export PYTHONDONTWRITEBYTECODE=1;   python get-pip.py   --disable-pip-version-check   --no-cache-dir   --no-compile   "pip==$PYTHON_PIP_VERSION"   "setuptools==$PYTHON_SETUPTOOLS_VERSION"  ;  rm -f get-pip.py;   pip --version # buildkit; layerId:<missing>
+2023-10-20T03:07:02.9082508Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV PYTHON_GET_PIP_SHA256=22b849a10f86f5ddf7ce148ca2a31214504ee6c83ef626840fde6e5dcd809d11; layerId:<missing>
+2023-10-20T03:07:02.9085226Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/c6add47b0abf67511cdfb4734771cbab403af062/public/get-pip.py; layerId:<missing>
+2023-10-20T03:07:02.9087458Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV PYTHON_SETUPTOOLS_VERSION=65.5.1; layerId:<missing>
+2023-10-20T03:07:02.9089021Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV PYTHON_PIP_VERSION=23.0.1; layerId:<missing>
+2023-10-20T03:07:02.9091934Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:RUN /bin/sh -c set -eux;  for src in idle3 pydoc3 python3 python3-config; do   dst="$(echo "$src" | tr -d 3)";   [ -s "/usr/local/bin/$src" ];   [ ! -e "/usr/local/bin/$dst" ];   ln -svT "$src" "/usr/local/bin/$dst";  done # buildkit; layerId:<missing>
+2023-10-20T03:07:02.9111376Z createdAt:2023-10-15T21:49:12Z; layerSize:30.4MB; createdBy:RUN /bin/sh -c set -eux;   apk add --no-cache --virtual .build-deps   gnupg   tar   xz     bluez-dev   bzip2-dev   dpkg-dev dpkg   expat-dev   findutils   gcc   gdbm-dev   libc-dev   libffi-dev   libnsl-dev   libtirpc-dev   linux-headers   make   ncurses-dev   openssl-dev   pax-utils   readline-dev   sqlite-dev   tcl-dev   tk   tk-dev   util-linux-dev   xz-dev   zlib-dev  ;   wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz";  wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc";  GNUPGHOME="$(mktemp -d)"; export GNUPGHOME;  gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$GPG_KEY";  gpg --batch --verify python.tar.xz.asc python.tar.xz;  gpgconf --kill all;  rm -rf "$GNUPGHOME" python.tar.xz.asc;  mkdir -p /usr/src/python;  tar --extract --directory /usr/src/python --strip-components=1 --file python.tar.xz;  rm python.tar.xz;   cd /usr/src/python;  gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)";  ./configure   --build="$gnuArch"   --enable-loadable-sqlite-extensions   --enable-optimizations   --enable-option-checking=fatal   --enable-shared   --with-lto   --with-system-expat   --without-ensurepip  ;  nproc="$(nproc)";  EXTRA_CFLAGS="-DTHREAD_STACK_SIZE=0x100000";  LDFLAGS="${LDFLAGS:--Wl},--strip-all";  make -j "$nproc"   "EXTRA_CFLAGS=${EXTRA_CFLAGS:-}"   "LDFLAGS=${LDFLAGS:-}"   "PROFILE_TASK=${PROFILE_TASK:-}"  ;  rm python;  make -j "$nproc"   "EXTRA_CFLAGS=${EXTRA_CFLAGS:-}"   "LDFLAGS=${LDFLAGS:--Wl},-rpath='\$\$ORIGIN/../lib'"   "PROFILE_TASK=${PROFILE_TASK:-}"   python  ;  make install;   cd /;  rm -rf /usr/src/python;   find /usr/local -depth   \(    \( -type d -a \( -name test -o -name tests -o -name idle_test \) \)    -o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name 'libpython*.a' \) \)   \) -exec rm -rf '{}' +  ;   find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec scanelf --needed --nobanner --format '%n#p' '{}' ';'   | tr ',' '\n'   | sort -u   | awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }'   | xargs -rt apk add --no-network --virtual .python-rundeps  ;  apk del --no-network .build-deps;   python3 --version # buildkit; layerId:<missing>
+2023-10-20T03:07:02.9126932Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV PYTHON_VERSION=3.10.13; layerId:<missing>
+2023-10-20T03:07:02.9128657Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D; layerId:<missing>
+2023-10-20T03:07:02.9130806Z createdAt:2023-10-15T21:49:12Z; layerSize:1.63MB; createdBy:RUN /bin/sh -c set -eux;  apk add --no-cache   ca-certificates   tzdata  ; # buildkit; layerId:<missing>
+2023-10-20T03:07:02.9132610Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV LANG=C.UTF-8; layerId:<missing>
+2023-10-20T03:07:02.9134495Z createdAt:2023-10-15T21:49:12Z; layerSize:0B; createdBy:ENV PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin; layerId:<missing>
+2023-10-20T03:07:02.9136452Z createdAt:2023-09-28T21:19:27Z; layerSize:0B; createdBy:/bin/sh -c #(nop)  CMD ["/bin/sh"]; layerId:<missing>
+2023-10-20T03:07:02.9138587Z createdAt:2023-09-28T21:19:27Z; layerSize:7.33MB; createdBy:/bin/sh -c #(nop) ADD file:756183bba9c7f4593c2b216e98e4208b9163c4c962ea0837ef88bd917609d001 in / ; layerId:<missing>
+2023-10-20T03:07:02.9147257Z [command]/usr/bin/docker inspect 23bb67dd7684f4db2c76c7f048f9c58dd4c80818f11277c3be603191df374062 -f {{.RootFS.Layers}}
+2023-10-20T03:07:02.9283112Z [sha256:cc2447e1835a40530975ab80bb1f872fbab0f2a0faecf2ab16fbbb89b3589438 sha256:6f25d7d19389be3c6552c8f508665895417415dae09314c2b7674827bf19eada sha256:655198633c3b658f7dbf8a033604f62ac691841f42df62caa579e87baf82d739 sha256:351cad859054bdd09bf85bd4259bd97655198957845ebb5ebb601dc48db43945 sha256:bd5ef547d2c5390a62f61ead9b063ba0ae14527aaf523dc52b42cbc90edf922c sha256:b577a68d3708401eed46fc934d090444c23f4da51c2527a5b2982d81f29ef6c7 sha256:e2c605c10d7092ba1e826ecf3e7dd48d8e6e5240b27bb5a6bb9c6d0d8d235e3e sha256:0500a4443d35ab7a56e027adfb4f04edab35a5089ae9d2ac2ddcbf89520c7e9f sha256:35160ce7e47ba75a08978b1ee45f1bd29a52420f92925b73baf6f54dca92e8a8 sha256:ada47ae6a8bec48db49de9b61c7cb74cac37040d8ee93dd53f100861eb8c4af3 sha256:701469d2fcd52dbce3432aa6a2b949566de6f5c9d2adb77fb47a0abf5102279b sha256:451e981d878bc2edfd6b6948ecd63c82dcc48a0fea2e524bcd4c6f882103f8ea]
+2023-10-20T03:07:02.9773887Z ##[section]Finishing: Build and Push to DockerHub
+2023-10-20T03:07:02.9807944Z ##[section]Starting: SonarQubeAnalyze
+2023-10-20T03:07:02.9814107Z ==============================================================================
+2023-10-20T03:07:02.9814518Z Task         : Run Code Analysis
+2023-10-20T03:07:02.9814767Z Description  : Run scanner and upload the results to the SonarQube server.
+2023-10-20T03:07:02.9815286Z Version      : 5.17.2
+2023-10-20T03:07:02.9815452Z Author       : sonarsource
+2023-10-20T03:07:02.9815744Z Help         : Version: 5.17.2. This task is not needed for Maven and Gradle projects since the scanner should be run as part of the build.
+
+[More Information](http://redirect.sonarsource.com/doc/install-configure-scanner-tfs-ts.html)
+2023-10-20T03:07:02.9817448Z ==============================================================================
+2023-10-20T03:07:03.2012659Z [command]/home/vsts/work/_tasks/SonarQubeAnalyze_6d01813a-9589-4b15-8491-8164aeb38055/5.17.2/sonar-scanner/bin/sonar-scanner
+2023-10-20T03:07:03.4896977Z INFO: Scanner configuration file: /home/vsts/work/_tasks/SonarQubeAnalyze_6d01813a-9589-4b15-8491-8164aeb38055/5.17.2/sonar-scanner/conf/sonar-scanner.properties
+2023-10-20T03:07:03.4948108Z INFO: Project root configuration file: NONE
+2023-10-20T03:07:03.5441809Z INFO: SonarScanner 4.8.1.3023
+2023-10-20T03:07:03.5450955Z INFO: Java 11.0.20.1 Eclipse Adoptium (64-bit)
+2023-10-20T03:07:03.5452002Z INFO: Linux 6.2.0-1014-azure amd64
+2023-10-20T03:07:03.9734709Z INFO: User cache: /home/vsts/.sonar/cache
+2023-10-20T03:07:04.7515515Z INFO: Analyzing on SonarQube server 10.2.1.78527
+2023-10-20T03:07:04.7531936Z INFO: Default locale: "en", source code encoding: "UTF-8" (analysis is platform dependent)
+2023-10-20T03:07:05.5140686Z INFO: Load global settings
+2023-10-20T03:07:05.6448358Z INFO: Load global settings (done) | time=132ms
+2023-10-20T03:07:05.6538417Z INFO: Server id: 147B411E-AYtDiqGWJSzxyQzXZloY
+2023-10-20T03:07:05.6545260Z INFO: User cache: /home/vsts/.sonar/cache
+2023-10-20T03:07:05.6577870Z INFO: Load/download plugins
+2023-10-20T03:07:05.6581176Z INFO: Load plugins index
+2023-10-20T03:07:05.7354081Z INFO: Load plugins index (done) | time=72ms
+2023-10-20T03:07:08.4194306Z INFO: Load/download plugins (done) | time=2761ms
+2023-10-20T03:07:08.6891150Z WARN: SonarScanner will require Java 17 to run, starting in SonarQube 10.3
+2023-10-20T03:07:09.2494093Z INFO: Process project properties
+2023-10-20T03:07:09.2562263Z INFO: Process project properties (done) | time=9ms
+2023-10-20T03:07:09.2582938Z INFO: Execute project builders
+2023-10-20T03:07:09.2597617Z INFO: Execute project builders (done) | time=2ms
+2023-10-20T03:07:09.2629327Z INFO: Project key: AzureSonarWebapp
+2023-10-20T03:07:09.2631761Z INFO: Base dir: /home/vsts/work/1/s
+2023-10-20T03:07:09.2634087Z INFO: Working dir: /home/vsts/work/1/s/.scannerwork
+2023-10-20T03:07:09.2710560Z INFO: Load project settings for component key: 'AzureSonarWebapp'
+2023-10-20T03:07:09.3042389Z INFO: Load project settings for component key: 'AzureSonarWebapp' (done) | time=33ms
+2023-10-20T03:07:09.5555085Z INFO: Auto-configuring with CI 'Azure DevOps'
+2023-10-20T03:07:09.5609773Z INFO: Load quality profiles
+2023-10-20T03:07:09.6433334Z INFO: Load quality profiles (done) | time=82ms
+2023-10-20T03:07:09.6490205Z INFO: Load active rules
+2023-10-20T03:07:12.3022613Z INFO: Load active rules (done) | time=2653ms
+2023-10-20T03:07:12.3081395Z INFO: Load analysis cache
+2023-10-20T03:07:12.3478807Z INFO: Load analysis cache (599 bytes) | time=40ms
+2023-10-20T03:07:12.3944447Z INFO: Load project repositories
+2023-10-20T03:07:12.4283875Z INFO: Load project repositories (done) | time=34ms
+2023-10-20T03:07:12.4859929Z INFO: Indexing files...
+2023-10-20T03:07:12.4860448Z INFO: Project configuration:
+2023-10-20T03:07:12.6067029Z INFO: 9 files indexed
+2023-10-20T03:07:12.6069868Z INFO: 0 files ignored because of scm ignore settings
+2023-10-20T03:07:12.6084601Z INFO: Quality profile for py: Sonar way
+2023-10-20T03:07:12.6085414Z INFO: Quality profile for yaml: Sonar way
+2023-10-20T03:07:12.6087344Z INFO: ------------- Run sensors on module AzureSonarWebapp
+2023-10-20T03:07:12.7026236Z INFO: Load metrics repository
+2023-10-20T03:07:12.7560343Z INFO: Load metrics repository (done) | time=53ms
+2023-10-20T03:07:14.9457047Z INFO: Sensor Python Sensor [python]
+2023-10-20T03:07:14.9491153Z WARN: Your code is analyzed as compatible with all Python 3 versions by default. You can get a more precise analysis by setting the exact Python version in your configuration via the parameter "sonar.python.version"
+2023-10-20T03:07:14.9707298Z INFO: Starting global symbols computation
+2023-10-20T03:07:14.9953537Z INFO: 1 source file to be analyzed
+2023-10-20T03:07:15.3955647Z INFO: 1/1 source file has been analyzed
+2023-10-20T03:07:15.4265514Z INFO: Starting rules execution
+2023-10-20T03:07:15.4399550Z INFO: 1 source file to be analyzed
+2023-10-20T03:07:15.6355990Z INFO: 1/1 source file has been analyzed
+2023-10-20T03:07:15.6359145Z INFO: The Python analyzer was able to leverage cached data from previous analyses for 0 out of 1 files. These files were not parsed.
+2023-10-20T03:07:15.6360402Z INFO: Sensor Python Sensor [python] (done) | time=691ms
+2023-10-20T03:07:15.6361132Z INFO: Sensor Cobertura Sensor for Python coverage [python]
+2023-10-20T03:07:15.6483670Z INFO: Sensor Cobertura Sensor for Python coverage [python] (done) | time=12ms
+2023-10-20T03:07:15.6484663Z INFO: Sensor PythonXUnitSensor [python]
+2023-10-20T03:07:15.6533331Z INFO: Sensor PythonXUnitSensor [python] (done) | time=4ms
+2023-10-20T03:07:15.6534182Z INFO: Sensor JaCoCo XML Report Importer [jacoco]
+2023-10-20T03:07:15.6545990Z INFO: 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+2023-10-20T03:07:15.6550750Z INFO: No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+2023-10-20T03:07:15.6551821Z INFO: Sensor JaCoCo XML Report Importer [jacoco] (done) | time=1ms
+2023-10-20T03:07:15.6552657Z INFO: Sensor IaC CloudFormation Sensor [iac]
+2023-10-20T03:07:15.6835699Z INFO: 0 source files to be analyzed
+2023-10-20T03:07:15.6852242Z INFO: 0/0 source files have been analyzed
+2023-10-20T03:07:15.6854653Z INFO: Sensor IaC CloudFormation Sensor [iac] (done) | time=31ms
+2023-10-20T03:07:15.6855366Z INFO: Sensor IaC Kubernetes Sensor [iac]
+2023-10-20T03:07:15.6986029Z INFO: 4 source files to be analyzed
+2023-10-20T03:07:15.7870823Z INFO: 4/4 source files have been analyzed
+2023-10-20T03:07:15.7873031Z INFO: Sensor IaC Kubernetes Sensor [iac] (done) | time=101ms
+2023-10-20T03:07:15.7873869Z INFO: Sensor JavaScript inside YAML analysis [javascript]
+2023-10-20T03:07:15.7998579Z INFO: No input files found for analysis
+2023-10-20T03:07:15.8007721Z INFO: Hit the cache for 0 out of 0
+2023-10-20T03:07:15.8022023Z INFO: Miss the cache for 0 out of 0
+2023-10-20T03:07:15.8026863Z INFO: Sensor JavaScript inside YAML analysis [javascript] (done) | time=15ms
+2023-10-20T03:07:15.8034693Z INFO: Sensor CSS Rules [javascript]
+2023-10-20T03:07:15.8043738Z INFO: No CSS, PHP, HTML or VueJS files are found in the project. CSS analysis is skipped.
+2023-10-20T03:07:15.8048224Z INFO: Sensor CSS Rules [javascript] (done) | time=2ms
+2023-10-20T03:07:15.8052442Z INFO: Sensor C# Project Type Information [csharp]
+2023-10-20T03:07:15.8063670Z INFO: Sensor C# Project Type Information [csharp] (done) | time=2ms
+2023-10-20T03:07:15.8068209Z INFO: Sensor C# Analysis Log [csharp]
+2023-10-20T03:07:15.8246441Z INFO: Sensor C# Analysis Log [csharp] (done) | time=18ms
+2023-10-20T03:07:15.8250881Z INFO: Sensor C# Properties [csharp]
+2023-10-20T03:07:15.8255800Z INFO: Sensor C# Properties [csharp] (done) | time=1ms
+2023-10-20T03:07:15.8259921Z INFO: Sensor HTML [web]
+2023-10-20T03:07:15.8289127Z INFO: Sensor HTML [web] (done) | time=3ms
+2023-10-20T03:07:15.8293532Z INFO: Sensor TextAndSecretsSensor [text]
+2023-10-20T03:07:16.3450542Z INFO: 7 source files to be analyzed
+2023-10-20T03:07:16.3579213Z INFO: 7/7 source files have been analyzed
+2023-10-20T03:07:16.3587760Z INFO: Sensor TextAndSecretsSensor [text] (done) | time=529ms
+2023-10-20T03:07:16.3592728Z INFO: Sensor VB.NET Project Type Information [vbnet]
+2023-10-20T03:07:16.3604752Z INFO: Sensor VB.NET Project Type Information [vbnet] (done) | time=2ms
+2023-10-20T03:07:16.3609674Z INFO: Sensor VB.NET Analysis Log [vbnet]
+2023-10-20T03:07:16.3769899Z INFO: Sensor VB.NET Analysis Log [vbnet] (done) | time=16ms
+2023-10-20T03:07:16.3775240Z INFO: Sensor VB.NET Properties [vbnet]
+2023-10-20T03:07:16.3780299Z INFO: Sensor VB.NET Properties [vbnet] (done) | time=0ms
+2023-10-20T03:07:16.3784825Z INFO: Sensor IaC Docker Sensor [iac]
+2023-10-20T03:07:16.3909380Z INFO: 1 source file to be analyzed
+2023-10-20T03:07:16.5083700Z INFO: 1/1 source file has been analyzed
+2023-10-20T03:07:16.5093843Z INFO: Sensor IaC Docker Sensor [iac] (done) | time=130ms
+2023-10-20T03:07:16.5146735Z INFO: ------------- Run sensors on project
+2023-10-20T03:07:16.5826680Z INFO: Sensor Analysis Warnings import [csharp]
+2023-10-20T03:07:16.5839815Z INFO: Sensor Analysis Warnings import [csharp] (done) | time=2ms
+2023-10-20T03:07:16.5844937Z INFO: Sensor Zero Coverage Sensor
+2023-10-20T03:07:16.5972651Z INFO: Sensor Zero Coverage Sensor (done) | time=12ms
+2023-10-20T03:07:16.5998866Z INFO: SCM Publisher SCM provider for this project is: git
+2023-10-20T03:07:16.6032855Z INFO: SCM Publisher 6 source files to be analyzed
+2023-10-20T03:07:16.6087065Z WARN: Shallow clone detected, no blame information will be provided. You can convert to non-shallow with 'git fetch --unshallow'.
+2023-10-20T03:07:16.6117590Z INFO: SCM Publisher 0/6 source files have been analyzed (done) | time=7ms
+2023-10-20T03:07:16.6124229Z WARN: Missing blame information for the following files:
+2023-10-20T03:07:16.6130448Z WARN:   * Dockerfile
+2023-10-20T03:07:16.6134983Z WARN:   * environment/01-smarttestingdeployment.yml
+2023-10-20T03:07:16.6139373Z WARN:   * app.py
+2023-10-20T03:07:16.6143866Z WARN:   * environment/02-smarttestingservice.yml
+2023-10-20T03:07:16.6148482Z WARN:   * webapp.yml
+2023-10-20T03:07:16.6153215Z WARN:   * environment/03-smarttestingingress.yml
+2023-10-20T03:07:16.6157874Z WARN: This may lead to missing/broken features in SonarQube
+2023-10-20T03:07:16.6182378Z INFO: CPD Executor 1 file had no CPD blocks
+2023-10-20T03:07:16.6188102Z INFO: CPD Executor Calculating CPD for 0 files
+2023-10-20T03:07:16.6195381Z INFO: CPD Executor CPD calculation finished (done) | time=0ms
+2023-10-20T03:07:16.7242913Z INFO: Analysis report generated in 96ms, dir size=143.4 kB
+2023-10-20T03:07:16.7391718Z INFO: Analysis report compressed in 14ms, zip size=24.1 kB
+2023-10-20T03:07:16.7934662Z INFO: Analysis report uploaded in 53ms
+2023-10-20T03:07:16.7955266Z INFO: ANALYSIS SUCCESSFUL, you can find the results at: http://20.84.86.38:9000/dashboard?id=AzureSonarWebapp
+2023-10-20T03:07:16.7961048Z INFO: Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+2023-10-20T03:07:16.7966575Z INFO: More about the report processing at http://20.84.86.38:9000/api/ce/task?id=AYtLDS2dJSzxyQzXZzNg
+2023-10-20T03:07:16.8063399Z INFO: Analysis total time: 8.126 s
+2023-10-20T03:07:16.8082201Z INFO: ------------------------------------------------------------------------
+2023-10-20T03:07:16.8089044Z INFO: EXECUTION SUCCESS
+2023-10-20T03:07:16.8093249Z INFO: ------------------------------------------------------------------------
+2023-10-20T03:07:16.8100349Z INFO: Total time: 13.352s
+2023-10-20T03:07:16.8883895Z INFO: Final Memory: 25M/87M
+2023-10-20T03:07:16.8889382Z INFO: ------------------------------------------------------------------------
+2023-10-20T03:07:17.2380290Z ##[section]Finishing: SonarQubeAnalyze
+2023-10-20T03:07:17.2415429Z ##[section]Starting: SonarQubePublish
+2023-10-20T03:07:17.2463459Z ==============================================================================
+2023-10-20T03:07:17.2463882Z Task         : Publish Quality Gate Result
+2023-10-20T03:07:17.2464180Z Description  : Publish SonarQube's Quality Gate result on the Azure DevOps build result, to be used after the actual analysis.
+2023-10-20T03:07:17.2465748Z Version      : 5.4.2
+2023-10-20T03:07:17.2465913Z Author       : sonarsource
+2023-10-20T03:07:17.2466125Z Help         : Version: 5.4.2. [More Information](http://redirect.sonarsource.com/doc/install-configure-scanner-tfs-ts.html)
+2023-10-20T03:07:17.2466925Z ==============================================================================
+2023-10-20T03:07:21.3233368Z ##[section]Finishing: SonarQubePublish
+2023-10-20T03:07:21.3268621Z ##[section]Starting: Deploy to Kubernestes Cluster Service
+2023-10-20T03:07:21.3278562Z ==============================================================================
+2023-10-20T03:07:21.3279061Z Task         : Kubectl
+2023-10-20T03:07:21.3279413Z Description  : Deploy, configure, update a Kubernetes cluster in Azure Container Service by running kubectl commands
+2023-10-20T03:07:21.3280208Z Version      : 1.227.0
+2023-10-20T03:07:21.3280396Z Author       : Microsoft Corporation
+2023-10-20T03:07:21.3280672Z Help         : https://aka.ms/azpipes-kubectl-tsg
+2023-10-20T03:07:21.3281002Z ==============================================================================
+2023-10-20T03:07:21.7389257Z Prepending PATH environment variable with directory: /usr/local/bin
+2023-10-20T03:07:22.1350032Z ==============================================================================
+2023-10-20T03:07:22.1350821Z 			Kubectl Client Version: v1.28.2
+2023-10-20T03:07:22.1351818Z 			Kubectl Server Version: v1.26.6
+2023-10-20T03:07:22.1352465Z ==============================================================================
+2023-10-20T03:07:22.1606265Z [command]/usr/local/bin/kubectl apply -n smarttesting -f /home/vsts/work/1/s/webapp.yml -o json
+2023-10-20T03:07:22.8444266Z {
+2023-10-20T03:07:22.8445035Z     "kind": "List",
+2023-10-20T03:07:22.8520329Z     "apiVersion": "v1",
+2023-10-20T03:07:22.8521030Z     "metadata": {},
+2023-10-20T03:07:22.8521751Z     "items": [
+2023-10-20T03:07:22.8522364Z         {
+2023-10-20T03:07:22.8523080Z             "apiVersion": "apps/v1",
+2023-10-20T03:07:22.8523738Z             "kind": "Deployment",
+2023-10-20T03:07:22.8524459Z             "metadata": {
+2023-10-20T03:07:22.8525114Z                 "annotations": {
+2023-10-20T03:07:22.8525986Z                     "deployment.kubernetes.io/revision": "1",
+2023-10-20T03:07:22.8530282Z                     "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"name\":\"pythonwebapp\",\"namespace\":\"smarttesting\"},\"spec\":{\"selector\":{\"matchLabels\":{\"app\":\"pythonwebapp\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"pythonwebapp\"}},\"spec\":{\"containers\":[{\"image\":\"***/smarttesting-webapp:40\",\"name\":\"pythonwebapp\",\"ports\":[{\"containerPort\":8000,\"protocol\":\"TCP\"}]}]}}}}\n"
+2023-10-20T03:07:22.8533562Z                 },
+2023-10-20T03:07:22.8534568Z                 "creationTimestamp": "2023-10-19T19:12:47Z",
+2023-10-20T03:07:22.8535335Z                 "generation": 1,
+2023-10-20T03:07:22.8536155Z                 "name": "pythonwebapp",
+2023-10-20T03:07:22.8536828Z                 "namespace": "smarttesting",
+2023-10-20T03:07:22.8539814Z                 "resourceVersion": "43369",
+2023-10-20T03:07:22.8540496Z                 "uid": "5e8e8c0d-20e8-437a-8ee9-340ef523d144"
+2023-10-20T03:07:22.8541000Z             },
+2023-10-20T03:07:22.8541304Z             "spec": {
+2023-10-20T03:07:22.8541693Z                 "progressDeadlineSeconds": 600,
+2023-10-20T03:07:22.8542165Z                 "replicas": 1,
+2023-10-20T03:07:22.8542586Z                 "revisionHistoryLimit": 10,
+2023-10-20T03:07:22.8543057Z                 "selector": {
+2023-10-20T03:07:22.8543440Z                     "matchLabels": {
+2023-10-20T03:07:22.8543909Z                         "app": "pythonwebapp"
+2023-10-20T03:07:22.8544499Z                     }
+2023-10-20T03:07:22.8544812Z                 },
+2023-10-20T03:07:22.8545136Z                 "strategy": {
+2023-10-20T03:07:22.8545523Z                     "rollingUpdate": {
+2023-10-20T03:07:22.8545988Z                         "maxSurge": "25%",
+2023-10-20T03:07:22.8546481Z                         "maxUnavailable": "25%"
+2023-10-20T03:07:22.8546932Z                     },
+2023-10-20T03:07:22.8547298Z                     "type": "RollingUpdate"
+2023-10-20T03:07:22.8547750Z                 },
+2023-10-20T03:07:22.8548059Z                 "template": {
+2023-10-20T03:07:22.8548448Z                     "metadata": {
+2023-10-20T03:07:22.8549247Z                         "creationTimestamp": null,
+2023-10-20T03:07:22.8549744Z                         "labels": {
+2023-10-20T03:07:22.8550200Z                             "app": "pythonwebapp"
+2023-10-20T03:07:22.8550797Z                         }
+2023-10-20T03:07:22.8551131Z                     },
+2023-10-20T03:07:22.8551469Z                     "spec": {
+2023-10-20T03:07:22.8551864Z                         "containers": [
+2023-10-20T03:07:22.8552284Z                             {
+2023-10-20T03:07:22.8552954Z                                 "image": "***/smarttesting-webapp:40",
+2023-10-20T03:07:22.8553570Z                                 "imagePullPolicy": "IfNotPresent",
+2023-10-20T03:07:22.8554129Z                                 "name": "pythonwebapp",
+2023-10-20T03:07:22.8554641Z                                 "ports": [
+2023-10-20T03:07:22.8555096Z                                     {
+2023-10-20T03:07:22.8555550Z                                         "containerPort": 8000,
+2023-10-20T03:07:22.8556103Z                                         "protocol": "TCP"
+2023-10-20T03:07:22.8556599Z                                     }
+2023-10-20T03:07:22.8557005Z                                 ],
+2023-10-20T03:07:22.8557446Z                                 "resources": {},
+2023-10-20T03:07:22.8558140Z                                 "terminationMessagePath": "/dev/termination-log",
+2023-10-20T03:07:22.8558778Z                                 "terminationMessagePolicy": "File"
+2023-10-20T03:07:22.8559292Z                             }
+2023-10-20T03:07:22.8559662Z                         ],
+2023-10-20T03:07:22.8560198Z                         "dnsPolicy": "ClusterFirst",
+2023-10-20T03:07:22.8560725Z                         "restartPolicy": "Always",
+2023-10-20T03:07:22.8561368Z                         "schedulerName": "default-scheduler",
+2023-10-20T03:07:22.8561912Z                         "securityContext": {},
+2023-10-20T03:07:22.8562450Z                         "terminationGracePeriodSeconds": 30
+2023-10-20T03:07:22.8562959Z                     }
+2023-10-20T03:07:22.8563271Z                 }
+2023-10-20T03:07:22.8563580Z             },
+2023-10-20T03:07:22.8563889Z             "status": {
+2023-10-20T03:07:22.8564248Z                 "availableReplicas": 1,
+2023-10-20T03:07:22.8564708Z                 "conditions": [
+2023-10-20T03:07:22.8565175Z                     {
+2023-10-20T03:07:22.8565700Z                         "lastTransitionTime": "2023-10-19T19:12:54Z",
+2023-10-20T03:07:22.8566432Z                         "lastUpdateTime": "2023-10-19T19:12:54Z",
+2023-10-20T03:07:22.8567074Z                         "message": "Deployment has minimum availability.",
+2023-10-20T03:07:22.8567687Z                         "reason": "MinimumReplicasAvailable",
+2023-10-20T03:07:22.8568227Z                         "status": "True",
+2023-10-20T03:07:22.8568697Z                         "type": "Available"
+2023-10-20T03:07:22.8569136Z                     },
+2023-10-20T03:07:22.8569467Z                     {
+2023-10-20T03:07:22.8570000Z                         "lastTransitionTime": "2023-10-19T19:12:47Z",
+2023-10-20T03:07:22.8570715Z                         "lastUpdateTime": "2023-10-19T19:12:54Z",
+2023-10-20T03:07:22.8571667Z                         "message": "ReplicaSet \"pythonwebapp-76cc849dd4\" has successfully progressed.",
+2023-10-20T03:07:22.8572484Z                         "reason": "NewReplicaSetAvailable",
+2023-10-20T03:07:22.8572999Z                         "status": "True",
+2023-10-20T03:07:22.8573482Z                         "type": "Progressing"
+2023-10-20T03:07:22.8573939Z                     }
+2023-10-20T03:07:22.8574248Z                 ],
+2023-10-20T03:07:22.8574595Z                 "observedGeneration": 1,
+2023-10-20T03:07:22.8575042Z                 "readyReplicas": 1,
+2023-10-20T03:07:22.8575477Z                 "replicas": 1,
+2023-10-20T03:07:22.8575880Z                 "updatedReplicas": 1
+2023-10-20T03:07:22.8576279Z             }
+2023-10-20T03:07:22.8576571Z         },
+2023-10-20T03:07:22.8576971Z         {
+2023-10-20T03:07:22.8577280Z             "apiVersion": "v1",
+2023-10-20T03:07:22.8577677Z             "kind": "Service",
+2023-10-20T03:07:22.8578066Z             "metadata": {
+2023-10-20T03:07:22.8578422Z                 "annotations": {
+2023-10-20T03:07:22.8580872Z                     "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"name\":\"pythonwebapp-svc\",\"namespace\":\"smarttesting\"},\"spec\":{\"ports\":[{\"port\":80,\"protocol\":\"TCP\",\"targetPort\":8000}],\"selector\":{\"app\":\"pythonwebapp\"}}}\n"
+2023-10-20T03:07:22.8582919Z                 },
+2023-10-20T03:07:22.8583428Z                 "creationTimestamp": "2023-10-19T19:12:47Z",
+2023-10-20T03:07:22.8584054Z                 "name": "pythonwebapp-svc",
+2023-10-20T03:07:22.8584911Z                 "namespace": "smarttesting",
+2023-10-20T03:07:22.8585406Z                 "resourceVersion": "43313",
+2023-10-20T03:07:22.8586046Z                 "uid": "f00ea728-40f0-46ce-ba31-cc03d0920b85"
+2023-10-20T03:07:22.8586563Z             },
+2023-10-20T03:07:22.8586865Z             "spec": {
+2023-10-20T03:07:22.8587216Z                 "clusterIP": "10.0.90.97",
+2023-10-20T03:07:22.8587689Z                 "clusterIPs": [
+2023-10-20T03:07:22.8588080Z                     "10.0.90.97"
+2023-10-20T03:07:22.8588473Z                 ],
+2023-10-20T03:07:22.8588842Z                 "internalTrafficPolicy": "Cluster",
+2023-10-20T03:07:22.8589325Z                 "ipFamilies": [
+2023-10-20T03:07:22.8589721Z                     "IPv4"
+2023-10-20T03:07:22.8590067Z                 ],
+2023-10-20T03:07:22.8590411Z                 "ipFamilyPolicy": "SingleStack",
+2023-10-20T03:07:22.8590889Z                 "ports": [
+2023-10-20T03:07:22.8591239Z                     {
+2023-10-20T03:07:22.8591561Z                         "port": 80,
+2023-10-20T03:07:22.8591998Z                         "protocol": "TCP",
+2023-10-20T03:07:22.8592478Z                         "targetPort": 8000
+2023-10-20T03:07:22.8592912Z                     }
+2023-10-20T03:07:22.8593228Z                 ],
+2023-10-20T03:07:22.8593535Z                 "selector": {
+2023-10-20T03:07:22.8593939Z                     "app": "pythonwebapp"
+2023-10-20T03:07:22.8594379Z                 },
+2023-10-20T03:07:22.8594707Z                 "sessionAffinity": "None",
+2023-10-20T03:07:22.8595173Z                 "type": "ClusterIP"
+2023-10-20T03:07:22.8595579Z             },
+2023-10-20T03:07:22.8595867Z             "status": {
+2023-10-20T03:07:22.8596224Z                 "loadBalancer": {}
+2023-10-20T03:07:22.8596620Z             }
+2023-10-20T03:07:22.8596890Z         },
+2023-10-20T03:07:22.8597160Z         {
+2023-10-20T03:07:22.8597492Z             "apiVersion": "networking.k8s.io/v1",
+2023-10-20T03:07:22.8597976Z             "kind": "Ingress",
+2023-10-20T03:07:22.8598364Z             "metadata": {
+2023-10-20T03:07:22.8598714Z                 "annotations": {
+2023-10-20T03:07:22.8602071Z                     "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"kubernetes.io/ingress.class\":\"azure/application-gateway\"},\"name\":\"pythonwebapp-ingress\",\"namespace\":\"smarttesting\"},\"spec\":{\"rules\":[{\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"pythonwebapp-svc\",\"port\":{\"number\":8000}}},\"path\":\"/\",\"pathType\":\"Exact\"}]}}]}}\n",
+2023-10-20T03:07:22.8605250Z                     "kubernetes.io/ingress.class": "azure/application-gateway"
+2023-10-20T03:07:22.8605895Z                 },
+2023-10-20T03:07:22.8606385Z                 "creationTimestamp": "2023-10-19T19:12:47Z",
+2023-10-20T03:07:22.8606932Z                 "generation": 1,
+2023-10-20T03:07:22.8607554Z                 "name": "pythonwebapp-ingress",
+2023-10-20T03:07:22.8608019Z                 "namespace": "smarttesting",
+2023-10-20T03:07:22.8608479Z                 "resourceVersion": "43325",
+2023-10-20T03:07:22.8609419Z                 "uid": "aac3f69b-e6fd-44e4-973a-1d84ee54f4d4"
+2023-10-20T03:07:22.8609928Z             },
+2023-10-20T03:07:22.8610229Z             "spec": {
+2023-10-20T03:07:22.8610561Z                 "rules": [
+2023-10-20T03:07:22.8610901Z                     {
+2023-10-20T03:07:22.8611315Z                         "http": {
+2023-10-20T03:07:22.8611710Z                             "paths": [
+2023-10-20T03:07:22.8612129Z                                 {
+2023-10-20T03:07:22.8612551Z                                     "backend": {
+2023-10-20T03:07:22.8613040Z                                         "service": {
+2023-10-20T03:07:22.8613674Z                                             "name": "pythonwebapp-svc",
+2023-10-20T03:07:22.8614223Z                                             "port": {
+2023-10-20T03:07:22.8614736Z                                                 "number": 8000
+2023-10-20T03:07:22.8615245Z                                             }
+2023-10-20T03:07:22.8615695Z                                         }
+2023-10-20T03:07:22.8616119Z                                     },
+2023-10-20T03:07:22.8616567Z                                     "path": "/",
+2023-10-20T03:07:22.8617068Z                                     "pathType": "Exact"
+2023-10-20T03:07:22.8617541Z                                 }
+2023-10-20T03:07:22.8617926Z                             ]
+2023-10-20T03:07:22.8618289Z                         }
+2023-10-20T03:07:22.8618616Z                     }
+2023-10-20T03:07:22.8618935Z                 ]
+2023-10-20T03:07:22.8619229Z             },
+2023-10-20T03:07:22.8619515Z             "status": {
+2023-10-20T03:07:22.8619867Z                 "loadBalancer": {
+2023-10-20T03:07:22.8620262Z                     "ingress": [
+2023-10-20T03:07:22.8620645Z                         {
+2023-10-20T03:07:22.8621034Z                             "ip": "172.200.129.178"
+2023-10-20T03:07:22.8621496Z                         }
+2023-10-20T03:07:22.8621833Z                     ]
+2023-10-20T03:07:22.8622150Z                 }
+2023-10-20T03:07:22.8622437Z             }
+2023-10-20T03:07:22.8622722Z         }
+2023-10-20T03:07:22.8622991Z     ]
+2023-10-20T03:07:22.8623237Z }
+2023-10-20T03:07:22.8625869Z commandOutput{
+2023-10-20T03:07:22.8626335Z     "kind": "List",
+2023-10-20T03:07:22.8626676Z     "apiVersion": "v1",
+2023-10-20T03:07:22.8627022Z     "metadata": {},
+2023-10-20T03:07:22.8627346Z     "items": [
+2023-10-20T03:07:22.8627657Z         {
+2023-10-20T03:07:22.8627958Z             "apiVersion": "apps/v1",
+2023-10-20T03:07:22.8628400Z             "kind": "Deployment",
+2023-10-20T03:07:22.8628796Z             "metadata": {
+2023-10-20T03:07:22.8629161Z                 "annotations": {
+2023-10-20T03:07:22.8629616Z                     "deployment.kubernetes.io/revision": "1",
+2023-10-20T03:07:22.8633394Z                     "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"name\":\"pythonwebapp\",\"namespace\":\"smarttesting\"},\"spec\":{\"selector\":{\"matchLabels\":{\"app\":\"pythonwebapp\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"pythonwebapp\"}},\"spec\":{\"containers\":[{\"image\":\"***/smarttesting-webapp:40\",\"name\":\"pythonwebapp\",\"ports\":[{\"containerPort\":8000,\"protocol\":\"TCP\"}]}]}}}}\n"
+2023-10-20T03:07:22.8636406Z                 },
+2023-10-20T03:07:22.8636911Z                 "creationTimestamp": "2023-10-19T19:12:47Z",
+2023-10-20T03:07:22.8637465Z                 "generation": 1,
+2023-10-20T03:07:22.8637891Z                 "name": "pythonwebapp",
+2023-10-20T03:07:22.8638365Z                 "namespace": "smarttesting",
+2023-10-20T03:07:22.8638971Z                 "resourceVersion": "43369",
+2023-10-20T03:07:22.8639566Z                 "uid": "5e8e8c0d-20e8-437a-8ee9-340ef523d144"
+2023-10-20T03:07:22.8640028Z             },
+2023-10-20T03:07:22.8640306Z             "spec": {
+2023-10-20T03:07:22.8640659Z                 "progressDeadlineSeconds": 600,
+2023-10-20T03:07:22.8641094Z                 "replicas": 1,
+2023-10-20T03:07:22.8641630Z                 "revisionHistoryLimit": 10,
+2023-10-20T03:07:22.8642059Z                 "selector": {
+2023-10-20T03:07:22.8642426Z                     "matchLabels": {
+2023-10-20T03:07:22.8642847Z                         "app": "pythonwebapp"
+2023-10-20T03:07:22.8643343Z                     }
+2023-10-20T03:07:22.8643642Z                 },
+2023-10-20T03:07:22.8643939Z                 "strategy": {
+2023-10-20T03:07:22.8644296Z                     "rollingUpdate": {
+2023-10-20T03:07:22.8644716Z                         "maxSurge": "25%",
+2023-10-20T03:07:22.8645170Z                         "maxUnavailable": "25%"
+2023-10-20T03:07:22.8645583Z                     },
+2023-10-20T03:07:22.8645918Z                     "type": "RollingUpdate"
+2023-10-20T03:07:22.8646343Z                 },
+2023-10-20T03:07:22.8646818Z                 "template": {
+2023-10-20T03:07:22.8647201Z                     "metadata": {
+2023-10-20T03:07:22.8647629Z                         "creationTimestamp": null,
+2023-10-20T03:07:22.8648120Z                         "labels": {
+2023-10-20T03:07:22.8648569Z                             "app": "pythonwebapp"
+2023-10-20T03:07:22.8649023Z                         }
+2023-10-20T03:07:22.8649369Z                     },
+2023-10-20T03:07:22.8649707Z                     "spec": {
+2023-10-20T03:07:22.8650084Z                         "containers": [
+2023-10-20T03:07:22.8650508Z                             {
+2023-10-20T03:07:22.8651119Z                                 "image": "***/smarttesting-webapp:40",
+2023-10-20T03:07:22.8651712Z                                 "imagePullPolicy": "IfNotPresent",
+2023-10-20T03:07:22.8652274Z                                 "name": "pythonwebapp",
+2023-10-20T03:07:22.8652774Z                                 "ports": [
+2023-10-20T03:07:22.8653204Z                                     {
+2023-10-20T03:07:22.8653671Z                                         "containerPort": 8000,
+2023-10-20T03:07:22.8654219Z                                         "protocol": "TCP"
+2023-10-20T03:07:22.8654702Z                                     }
+2023-10-20T03:07:22.8655116Z                                 ],
+2023-10-20T03:07:22.8655545Z                                 "resources": {},
+2023-10-20T03:07:22.8656229Z                                 "terminationMessagePath": "/dev/termination-log",
+2023-10-20T03:07:22.8656876Z                                 "terminationMessagePolicy": "File"
+2023-10-20T03:07:22.8657385Z                             }
+2023-10-20T03:07:22.8657741Z                         ],
+2023-10-20T03:07:22.8658149Z                         "dnsPolicy": "ClusterFirst",
+2023-10-20T03:07:22.8658672Z                         "restartPolicy": "Always",
+2023-10-20T03:07:22.8659291Z                         "schedulerName": "default-scheduler",
+2023-10-20T03:07:22.8659840Z                         "securityContext": {},
+2023-10-20T03:07:22.8660369Z                         "terminationGracePeriodSeconds": 30
+2023-10-20T03:07:22.8660858Z                     }
+2023-10-20T03:07:22.8661183Z                 }
+2023-10-20T03:07:22.8661485Z             },
+2023-10-20T03:07:22.8661780Z             "status": {
+2023-10-20T03:07:22.8662157Z                 "availableReplicas": 1,
+2023-10-20T03:07:22.8662605Z                 "conditions": [
+2023-10-20T03:07:22.8662980Z                     {
+2023-10-20T03:07:22.8663508Z                         "lastTransitionTime": "2023-10-19T19:12:54Z",
+2023-10-20T03:07:22.8665558Z                         "lastUpdateTime": "2023-10-19T19:12:54Z",
+2023-10-20T03:07:22.8666204Z                         "message": "Deployment has minimum availability.",
+2023-10-20T03:07:22.8666891Z                         "reason": "MinimumReplicasAvailable",
+2023-10-20T03:07:22.8667409Z                         "status": "True",
+2023-10-20T03:07:22.8667873Z                         "type": "Available"
+2023-10-20T03:07:22.8668322Z                     },
+2023-10-20T03:07:22.8668632Z                     {
+2023-10-20T03:07:22.8669166Z                         "lastTransitionTime": "2023-10-19T19:12:47Z",
+2023-10-20T03:07:22.8670059Z                         "lastUpdateTime": "2023-10-19T19:12:54Z",
+2023-10-20T03:07:22.8671012Z                         "message": "ReplicaSet \"pythonwebapp-76cc849dd4\" has successfully progressed.",
+2023-10-20T03:07:22.8671921Z                         "reason": "NewReplicaSetAvailable",
+2023-10-20T03:07:22.8672448Z                         "status": "True",
+2023-10-20T03:07:22.8672918Z                         "type": "Progressing"
+2023-10-20T03:07:22.8673373Z                     }
+2023-10-20T03:07:22.8673693Z                 ],
+2023-10-20T03:07:22.8674020Z                 "observedGeneration": 1,
+2023-10-20T03:07:22.8674480Z                 "readyReplicas": 1,
+2023-10-20T03:07:22.8674907Z                 "replicas": 1,
+2023-10-20T03:07:22.8675294Z                 "updatedReplicas": 1
+2023-10-20T03:07:22.8675712Z             }
+2023-10-20T03:07:22.8675998Z         },
+2023-10-20T03:07:22.8676257Z         {
+2023-10-20T03:07:22.8676547Z             "apiVersion": "v1",
+2023-10-20T03:07:22.8676948Z             "kind": "Service",
+2023-10-20T03:07:22.8677335Z             "metadata": {
+2023-10-20T03:07:22.8677699Z                 "annotations": {
+2023-10-20T03:07:22.8680056Z                     "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"name\":\"pythonwebapp-svc\",\"namespace\":\"smarttesting\"},\"spec\":{\"ports\":[{\"port\":80,\"protocol\":\"TCP\",\"targetPort\":8000}],\"selector\":{\"app\":\"pythonwebapp\"}}}\n"
+2023-10-20T03:07:22.8682091Z                 },
+2023-10-20T03:07:22.8683170Z                 "creationTimestamp": "2023-10-19T19:12:47Z",
+2023-10-20T03:07:22.8683841Z                 "name": "pythonwebapp-svc",
+2023-10-20T03:07:22.8684335Z                 "namespace": "smarttesting",
+2023-10-20T03:07:22.8684835Z                 "resourceVersion": "43313",
+2023-10-20T03:07:22.8685472Z                 "uid": "f00ea728-40f0-46ce-ba31-cc03d0920b85"
+2023-10-20T03:07:22.8685975Z             },
+2023-10-20T03:07:22.8686282Z             "spec": {
+2023-10-20T03:07:22.8686634Z                 "clusterIP": "10.0.90.97",
+2023-10-20T03:07:22.8687104Z                 "clusterIPs": [
+2023-10-20T03:07:22.8687507Z                     "10.0.90.97"
+2023-10-20T03:07:22.8687886Z                 ],
+2023-10-20T03:07:22.8688257Z                 "internalTrafficPolicy": "Cluster",
+2023-10-20T03:07:22.8688759Z                 "ipFamilies": [
+2023-10-20T03:07:22.8689142Z                     "IPv4"
+2023-10-20T03:07:22.8689490Z                 ],
+2023-10-20T03:07:22.8689848Z                 "ipFamilyPolicy": "SingleStack",
+2023-10-20T03:07:22.8690313Z                 "ports": [
+2023-10-20T03:07:22.8690666Z                     {
+2023-10-20T03:07:22.8690997Z                         "port": 80,
+2023-10-20T03:07:22.8691421Z                         "protocol": "TCP",
+2023-10-20T03:07:22.8691896Z                         "targetPort": 8000
+2023-10-20T03:07:22.8692328Z                     }
+2023-10-20T03:07:22.8692650Z                 ],
+2023-10-20T03:07:22.8692970Z                 "selector": {
+2023-10-20T03:07:22.8693361Z                     "app": "pythonwebapp"
+2023-10-20T03:07:22.8693794Z                 },
+2023-10-20T03:07:22.8694134Z                 "sessionAffinity": "None",
+2023-10-20T03:07:22.8694591Z                 "type": "ClusterIP"
+2023-10-20T03:07:22.8694996Z             },
+2023-10-20T03:07:22.8695296Z             "status": {
+2023-10-20T03:07:22.8695641Z                 "loadBalancer": {}
+2023-10-20T03:07:22.8696037Z             }
+2023-10-20T03:07:22.8696321Z         },
+2023-10-20T03:07:22.8696579Z         {
+2023-10-20T03:07:22.8696913Z             "apiVersion": "networking.k8s.io/v1",
+2023-10-20T03:07:22.8697397Z             "kind": "Ingress",
+2023-10-20T03:07:22.8697791Z             "metadata": {
+2023-10-20T03:07:22.8698152Z                 "annotations": {
+2023-10-20T03:07:22.8702088Z                     "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"kubernetes.io/ingress.class\":\"azure/application-gateway\"},\"name\":\"pythonwebapp-ingress\",\"namespace\":\"smarttesting\"},\"spec\":{\"rules\":[{\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"pythonwebapp-svc\",\"port\":{\"number\":8000}}},\"path\":\"/\",\"pathType\":\"Exact\"}]}}]}}\n",
+2023-10-20T03:07:22.8705607Z                     "kubernetes.io/ingress.class": "azure/application-gateway"
+2023-10-20T03:07:22.8706216Z                 },
+2023-10-20T03:07:22.8706724Z                 "creationTimestamp": "2023-10-19T19:12:47Z",
+2023-10-20T03:07:22.8707258Z                 "generation": 1,
+2023-10-20T03:07:22.8707777Z                 "name": "pythonwebapp-ingress",
+2023-10-20T03:07:22.8708293Z                 "namespace": "smarttesting",
+2023-10-20T03:07:22.8708788Z                 "resourceVersion": "43325",
+2023-10-20T03:07:22.8709424Z                 "uid": "aac3f69b-e6fd-44e4-973a-1d84ee54f4d4"
+2023-10-20T03:07:22.8709937Z             },
+2023-10-20T03:07:22.8710229Z             "spec": {
+2023-10-20T03:07:22.8710567Z                 "rules": [
+2023-10-20T03:07:22.8710905Z                     {
+2023-10-20T03:07:22.8719216Z                         "http": {
+2023-10-20T03:07:22.8719835Z                             "paths": [
+2023-10-20T03:07:22.8720287Z                                 {
+2023-10-20T03:07:22.8720871Z                                     "backend": {
+2023-10-20T03:07:22.8721527Z                                         "service": {
+2023-10-20T03:07:22.8722413Z                                             "name": "pythonwebapp-svc",
+2023-10-20T03:07:22.8723120Z                                             "port": {
+2023-10-20T03:07:22.8723790Z                                                 "number": 8000
+2023-10-20T03:07:22.8724297Z                                             }
+2023-10-20T03:07:22.8724896Z                                         }
+2023-10-20T03:07:22.8725332Z                                     },
+2023-10-20T03:07:22.8725776Z                                     "path": "/",
+2023-10-20T03:07:22.8726443Z                                     "pathType": "Exact"
+2023-10-20T03:07:22.8726924Z                                 }
+2023-10-20T03:07:22.8727300Z                             ]
+2023-10-20T03:07:22.8727672Z                         }
+2023-10-20T03:07:22.8728135Z                     }
+2023-10-20T03:07:22.8728473Z                 ]
+2023-10-20T03:07:22.8728773Z             },
+2023-10-20T03:07:22.8729064Z             "status": {
+2023-10-20T03:07:22.8729420Z                 "loadBalancer": {
+2023-10-20T03:07:22.8729828Z                     "ingress": [
+2023-10-20T03:07:22.8730201Z                         {
+2023-10-20T03:07:22.8730591Z                             "ip": "172.200.129.178"
+2023-10-20T03:07:22.8731065Z                         }
+2023-10-20T03:07:22.8731390Z                     ]
+2023-10-20T03:07:22.8731708Z                 }
+2023-10-20T03:07:22.8732156Z             }
+2023-10-20T03:07:22.8732428Z         }
+2023-10-20T03:07:22.8732699Z     ]
+2023-10-20T03:07:22.8732949Z }
+2023-10-20T03:07:22.8733053Z 
+2023-10-20T03:07:23.1935976Z ##[section]Finishing: Deploy to Kubernestes Cluster Service
+2023-10-20T03:07:23.1974021Z ##[section]Starting: Checkout smarttesting.git@develop to s
+2023-10-20T03:07:23.1978801Z ==============================================================================
+2023-10-20T03:07:23.1979234Z Task         : Get sources
+2023-10-20T03:07:23.1979454Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2023-10-20T03:07:23.1980060Z Version      : 1.0.0
+2023-10-20T03:07:23.1980236Z Author       : Microsoft
+2023-10-20T03:07:23.1980424Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2023-10-20T03:07:23.1980933Z ==============================================================================
+2023-10-20T03:07:23.6191732Z Cleaning any cached credential from repository: smarttesting.git (Git)
+2023-10-20T03:07:23.6324835Z ##[section]Finishing: Checkout smarttesting.git@develop to s
+2023-10-20T03:07:23.6456227Z ##[section]Starting: Finalize Job
+2023-10-20T03:07:23.6491650Z Cleaning up task key
+2023-10-20T03:07:23.6493171Z Start cleaning up orphan processes.
+2023-10-20T03:07:23.6987327Z ##[section]Finishing: Finalize Job
+2023-10-20T03:07:23.7062174Z ##[section]Finishing: Job
