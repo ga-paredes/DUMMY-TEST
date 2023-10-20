@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pythonwebapp
+spec:
+  selector:
+    matchLabels:
+      app: pythonwebapp
+  template:
+    metadata:
+      labels:
+        app: pythonwebapp
+    spec:
+      containers:
+      - name: pythonwebapp
+        image: "gaparedes/smarttesting-webapp:40"
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: pythonwebapp-svc
+spec:
+  selector:
+    app: pythonwebapp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pythonwebapp-ingress
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          service:
+            name: pythonwebapp-svc
+            port:
+              number: 8000
+        pathType: Exact
+
